@@ -144,7 +144,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-40 bg-white">
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-14 lg:mb-16">

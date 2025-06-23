@@ -30,7 +30,7 @@ export default function DownloadSection() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-6 md:px-8 lg:px-12">
+      <div className="relative z-10 w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="items-center gap-12 lg:gap-16 ">
             {/* Left Content */}

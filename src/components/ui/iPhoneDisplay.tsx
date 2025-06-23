@@ -6,7 +6,7 @@ interface iPhoneDisplayProps {
 
 export default function iPhoneDisplay({ className = "" }: iPhoneDisplayProps) {
   return (
-    <div className={`w-full  ${className}`}>
+    <div className={` ${className}`}>
       <img
         src="/images/iPhone-14.png"
         alt="iPhone 14"

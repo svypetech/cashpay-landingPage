@@ -6,13 +6,50 @@ import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "About us", href: "#" },
-    { name: "Features", href: "#" },
-    { name: "How It Works?", href: "#" },
+    { name: "Features", href: "#", hasDropdown: true },
+    { name: "How It works?", href: "#" },
     { name: "Testimonials", href: "#" },
+  ];
+
+  const dropdownItems = [
+    {
+      title: "Deposit",
+      description: "Easily add funds to your wallet from any source.",
+    },
+    {
+      title: "Withdraw",
+      description:
+        "Transfer your crypto to external wallets or convert to fiat.",
+    },
+    {
+      title: "Swap",
+      description: "Exchange one cryptocurrency for another instantly.",
+    },
+    {
+      title: "Send Gift",
+      description: "Share crypto with friends and family as a thoughtful gift.",
+    },
+    {
+      title: "Cards",
+      description: "Spend your crypto with physical and virtual cards.",
+    },
+    {
+      title: "Wallet Features",
+      description: "Securely store your crypto in hot wallets for easy access.",
+    },
+    {
+      title: "Portfolio Management",
+      description: "Monitor your holdings and track performance effortlessly.",
+    },
+    {
+      title: "P2P Trading",
+      description: "Trade directly with others through our secure platform.",
+    },
   ];
 
   useEffect(() => {
@@ -30,17 +67,24 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full px-[60px] fixed top-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+        isScrolled || showDropdown ? "bg-white shadow-md" : "bg-transparent"
       }`}
+      style={{
+        height: showDropdown ? "320px" : "64px",
+      }}
+      onMouseLeave={() => setShowDropdown(false)}
     >
-      <div className="max-w-8xl">
+      <div className="px-[60px] h-full">
+        {/* Main Navbar Content */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
               src={
-                isScrolled ? "/icons/primary-logo.svg" : "/icons/white-logo.svg"
+                isScrolled || showDropdown
+                  ? "/icons/primary-logo.svg"
+                  : "/icons/white-logo.svg"
               }
               alt="Company Logo"
               width={120}
@@ -53,29 +97,41 @@ export default function Navbar() {
           <div className="hidden md:block font-plus-jakarta font-[600]">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`relative px-3 py-2 text-sm transition-all duration-200 opacity-60 hover:opacity-100 group ${
-                    isScrolled
-                      ? "text-primaryText hover:text-black"
-                      : "text-[#B3B3B3] hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                  <div
-                    className={`absolute bottom-0 left-0 w-full h-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${
-                      isScrolled ? "bg-black" : "bg-white"
+                <div key={link.name} className="relative">
+                  <Link
+                    href={link.href}
+                    className={`relative px-3 py-2 text-sm transition-all duration-200 opacity-60 hover:opacity-100 group ${
+                      showDropdown && link.name === "Features"
+                        ? "bg-[#27AAE11A] rounded-lg text-black hover:text-black opacity-100"
+                        : isScrolled && !showDropdown
+                        ? "text-primaryText hover:text-black"
+                        : "text-[#B3B3B3] hover:text-white"
                     }`}
-                  ></div>
-                </Link>
+                    onMouseEnter={() => {
+                      if (link.hasDropdown) {
+                        setShowDropdown(true);
+                      } else {
+                        setShowDropdown(false);
+                      }
+                    }}
+                  >
+                    {link.name}
+                    {link.name !== "Features" && (
+                      <div
+                        className={`absolute bottom-0 left-0 w-full h-[2.5px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200  ${
+                          isScrolled && !showDropdown ? "bg-black" : "bg-white"
+                        }`}
+                      ></div>
+                    )}
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
 
           {/* Get App Button */}
-          <div className="hidden md:block ">
-            <button className="bg-primary text-white px-[30px] py-[10px] rounded-[10px] text-sm font-poppins font-normal transition-colors duration-200 hover:bg-blue-700">
+          <div className="hidden md:block">
+            <button className="bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600">
               Get App
             </button>
           </div>
@@ -85,7 +141,7 @@ export default function Navbar() {
             <button
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${
-                isScrolled
+                isScrolled || showDropdown
                   ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                   : "text-white hover:text-gray-300 hover:bg-white/10"
               }`}
@@ -106,6 +162,50 @@ export default function Navbar() {
                 />
               </svg>
             </button>
+          </div>
+        </div>
+
+        {/* Dropdown Content - Inside Navbar */}
+        <div
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            showDropdown ? "opacity-100 " : "opacity-0 max-h-0"
+          }`}
+        >
+          <div className="py-4 px-8">
+            <div className="flex items-center justify-between max-w-7xl mx-auto">
+              {/* Left side - Large icon */}
+              <div className="flex-shrink-0 w-48 flex items-center justify-start">
+                <Image
+                  src="/icons/dropdown-icons.svg"
+                  alt="Features Icon"
+                  width={140}
+                  height={100}
+                  className="w-auto h-auto"
+                />
+              </div>
+
+              {/* Right side - Feature grid */}
+              <div className="flex-1 pl-8">
+                <div className="grid grid-cols-4 gap-x-8 gap-y-6">
+                  {dropdownItems.map((item, index) => (
+                    <Link
+                      key={index}
+                      href="#"
+                      className="block group plus-jakarta-sans"
+                    >
+                      <div className="text-left">
+                        <h4 className="font-[700]  text-[18px] mb-1 group-hover:text-blue-600">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs font-[400] leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

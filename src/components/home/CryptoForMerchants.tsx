@@ -32,7 +32,7 @@ export default function CryptoForMerchants() {
 
   return (
     <section className="py-20 bg-dark-mode-bg max-[450px]:max-h-[1150px] max-[380px]:max-h-[1200px]">
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}

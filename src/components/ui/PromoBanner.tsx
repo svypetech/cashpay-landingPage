@@ -19,7 +19,11 @@ export default function PromoBanner({
 }: PromoBannerProps) {
   return (
     <div
-      className={`relative w-full h-[478px] ${!isFullWidth ? "max-w-[99%]   rounded-[24px]" : ""} p-[20px] px-[40px] flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative w-full h-[478px] ${
+        !isFullWidth ? "max-w-[99%] rounded-[24px]" : ""
+      } ${
+        isFullWidth ? "px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20" : "p-[20px] px-[40px]"
+      } flex items-center justify-center overflow-hidden ${className}`}
       style={{
         background: `linear-gradient(90deg, #C7D8FF 0%, #27AAE1 25%, #061F51 75%, #000000 100%)`,
         boxShadow: "0px 0px 0px 1px rgba(0, 0, 0, 0.24)",
@@ -33,16 +37,17 @@ export default function PromoBanner({
           backgroundSize: "300px",
           backgroundRepeat: "repeat",
           backgroundPosition: "center",
-          mixBlendMode: "multiply", // Changed from 'multiply' to 'overlay'
-          opacity: 0.55, // Reduced from 0.24 to 0.15
-          //   filter: "grayscale(100%) contrast(150%)",
+          mixBlendMode: "multiply",
+          opacity: 0.55,
         }}
       />
 
-      {/* Alternative subtle noise layer */}
-
       {/* Main Text Content */}
-      <div className="relative z-10 mt-4 min-[450px]:mt-0">
+      <div
+        className={`relative z-10 mt-4 min-[450px]:mt-0 ${
+          isFullWidth ? "max-w-7xl mx-auto w-full" : ""
+        }`}
+      >
         <h2 className="text-white text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-[700] font-plus-jakarta leading-tight">
           {text}
         </h2>
