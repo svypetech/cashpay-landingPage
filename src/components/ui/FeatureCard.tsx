@@ -42,12 +42,12 @@ export default function FeatureCard({
       </div>
 
       {/* Title - Centered */}
-      <h3 className={`font-[700] text-black  font-plus-jakarta ${titleClassName ? titleClassName : 'text-xl mb-2'}`}>
+      <h3 className={`font-[700] text-black   ${titleClassName ? titleClassName : 'text-xl mb-2'}`}>
         {title}
       </h3>
 
       {/* Description - Centered */}
-      <p className="text-secondaryText font-[400] font-plus-jakarta leading-relaxed">
+      <p className="text-[#333333] font-[400] font-[14px] leading-relaxed">
         {description}
       </p>
     </div>

@@ -29,7 +29,7 @@ export default function DepositFeatures() {
     <section className="py-16 bg-white w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <div className="max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 ">
           {depositFeatures.map((feature, index) => (
             <div className="flex justify-center" key={index}>
 

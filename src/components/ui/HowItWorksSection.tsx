@@ -1,50 +1,62 @@
 import React from "react";
 
-export default function HowItWorksSection() {
-  const steps = [
-    {
-      number: "1.",
-      text: "Choose crypto or fiat as your deposit method."
-    },
-    {
-      number: "2.", 
-      text: "Generate your unique wallet address for crypto deposits."
-    },
-    {
-      number: "3.",
-      text: "Transfer funds securely from your account or other wallets."
-    },
-    {
-      number: "4.",
-      text: "Receive a confirmation and see your updated wallet balance."
-    }
-  ];
+interface Step {
+  number: string;
+  text: string;
+}
+
+interface HowItWorksSectionProps {
+  title?: string;
+  description: string;
+  steps: Step[];
+  imageSrc: string;
+  imageAlt?: string;
+  imagePosition?: "left" | "right";
+  imageClasses?: string;
+  className?: string;
+}
+
+export default function HowItWorksSection({
+  title = "How It Works",
+  description,
+  steps,
+  imageSrc,
+  imageAlt = "Mobile App",
+  imagePosition = "left",
+  imageClasses = "w-[400px] h-[400px] lg:w-[450px] lg:h-[780px] xl:w-[500px] xl:h-[781px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]",
+  className = "",
+}: HowItWorksSectionProps) {
+  const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="py-20 bg-dark-mode-bg max-[450px]:max-h-[1150px] max-[380px]:max-h-[1200px]">
+    <section className={`py-10 bg-dark-mode-bg max-[450px]:max-h-[1150px] max-[380px]:max-h-[1200px] ${className}`}>
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Side - iPhone Image */}
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+            {/* Image Section */}
+            <div 
+              className={`flex justify-center lg:justify-start ${
+                isImageLeft ? "order-2 lg:order-1" : "order-2 lg:order-2"
+              } ${!isImageLeft ? "lg:justify-end" : ""}`}
+            >
               <div className="relative">
                 <img 
-                  src="/icons/double-iphone-vertical.svg" 
-                  alt="CashPay Mobile App"
-                  className="w-[400px] h-[400px] lg:w-[450px] lg:h-[781px] xl:w-[550px] xl:h-[781px] relative  max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]"
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className={`relative ${imageClasses}`}
                 />
               </div>
             </div>
 
-            {/* Right Content */}
-            <div className="order-1 lg:order-2">
+            {/* Content Section */}
+            <div className={`${isImageLeft ? "order-1 lg:order-2" : "order-1 lg:order-1"}`}>
               {/* Header */}
               <div className="mb-12">
                 <h2 className="w-full text-4xl lg:text-5xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
-                  How It Works
+                  {title}
                 </h2>
                 <p className="text-lg text-dark-mode-secondaryText font-[400] font-plus-jakarta leading-relaxed max-w-lg">
-                  Adding funds to your account is quick and secure. Here's how you can deposit your crypto or fiat
+                  {description}
                 </p>
               </div>
 

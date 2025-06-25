@@ -3,7 +3,6 @@ import Image from "next/image";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "outline" | "secondary";
   size?: "sm" | "md" | "lg";
   iconPath?: string;
   iconPosition?: "left" | "right";
@@ -14,7 +13,6 @@ interface ButtonProps {
 
 export default function Button({
   children,
-  variant = "primary",
   size = "md",
   iconPath,
   iconPosition = "right",
@@ -23,14 +21,7 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-poppins font-normal transition-all duration-300 w-[70%] sm:w-auto";
-
-  const variantClasses = {
-    primary: "bg-primary hover:bg-blue-700 text-white rounded-[10px]",
-    outline:
-      "bg-transparent border-[1px] border-white text-white rounded-[10px]",
-    secondary: "bg-secondary hover:bg-blue-400 text-white rounded-[10px]",
-  };
+    "inline-flex items-center justify-center font-poppins font-normal transition-all duration-300 w-[70%] sm:w-auto bg-transparent border-[1px] border-white text-white rounded-[10px]";
 
   const sizeClasses = {
     sm: "px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-sm",
@@ -46,15 +37,15 @@ export default function Button({
       height={20}
       className={`w-[12px] h-[12px] sm:w-[14px] sm:h-[14px] transition-transform duration-300 border-box ${
         iconPosition === "left" ? "mr-1.5 sm:mr-2" : "ml-3 sm:ml-5"
-      } ${variant === "outline" ? "group-hover:translate-x-1" : ""}`}
+      } group-hover:translate-x-1`}
     />
   ) : null;
 
   return (
     <button
-      className={`${baseClasses} ${variantClasses[variant]} ${
-        sizeClasses[size]
-      } ${className} group ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+      className={`${baseClasses} ${sizeClasses[size]} ${className} group ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
+      }`}
       onClick={onClick}
       disabled={disabled}
     >

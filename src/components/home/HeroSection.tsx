@@ -2,8 +2,6 @@ import Image from "next/image";
 import Button from "@/src/components/ui/Button";
 
 export default function HeroSection() {
-  
-
   return (
     <section className="min-h-screen bg-[#000A1D] px-8 sm:px-12 lg:px-[130px]">
       {/* Masked Background Container */}
@@ -17,7 +15,6 @@ export default function HeroSection() {
             className="object-cover opacity-40 rounded-lg"
             priority
             objectPosition="top"
-            
           />
           <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
         </div>
@@ -28,21 +25,17 @@ export default function HeroSection() {
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-plus-jakarta">
               Simplify Your Crypto Experience with CashPay
-
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-plus-jakarta">
               Manage your crypto assets, track balances, and analyze trends—all
-              in one
-              
-              secure platform.
+              in one secure platform.
             </p>
 
             {/* CTA Button */}
             <div className="flex justify-center">
               <Button
-                variant="outline"
                 size="lg"
                 iconPath="/icons/arrow.svg"
                 iconPosition="right"

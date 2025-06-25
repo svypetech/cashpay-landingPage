@@ -7,6 +7,7 @@ interface PromoBannerProps {
   className?: string;
   description?: string;
   isFullWidth?: boolean;
+  showNoiseEffect?: boolean;
 }
 
 export default function PromoBanner({
@@ -16,10 +17,11 @@ export default function PromoBanner({
   className = "",
   description = "",
   isFullWidth = true,
+  showNoiseEffect = true,
 }: PromoBannerProps) {
   return (
     <div
-      className={`relative w-full h-[478px] ${
+      className={`relative w-full h-[408px] ${
         !isFullWidth ? "max-w-[99%] rounded-[24px]" : ""
       } ${
         isFullWidth ? "px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20" : "p-[20px] px-[40px]"
@@ -30,6 +32,8 @@ export default function PromoBanner({
       }}
     >
       {/* Noise Texture Overlay - Lighter approach to preserve colors */}
+      {showNoiseEffect && (
+        
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -41,14 +45,17 @@ export default function PromoBanner({
           opacity: 0.55,
         }}
       />
+      )}
+
+      {/* Background Image */}
 
       {/* Main Text Content */}
       <div
-        className={`relative z-10 mt-4 min-[450px]:mt-0 ${
-          isFullWidth ? "max-w-7xl mx-auto w-full" : ""
+        className={`relative z-10 mt-4  min-[450px]:mt-0 ${
+          isFullWidth ? "max-w-7xl mx-auto w-full" : "flex justify-center max-w-[80%]"
         }`}
       >
-        <h2 className="text-white text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-[700] font-plus-jakarta leading-tight">
+        <h2 className="text-white text-4xl sm:text-5xl lg:text-5xl xl:text-[50px] font-[700] font-plus-jakarta leading-tight">
           {text}
         </h2>
         {description && (
