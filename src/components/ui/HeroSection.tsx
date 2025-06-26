@@ -11,7 +11,6 @@ interface HeroSectionProps {
   buttonSize?: "sm" | "md" | "lg";
   className?: string;
   iconPath?: string;
-
 }
 
 export default function HeroSection({
@@ -26,7 +25,7 @@ export default function HeroSection({
   className = "",
 }: HeroSectionProps) {
   return (
-    <section className={`min-h-screen bg-black ${className}`}>
+    <section className={`min-h-screen bg-black `}>
       {/* Masked Background Container */}
       <div className="relative min-h-screen overflow-hidden rounded-lg">
         {/* Background Image */}
@@ -34,7 +33,7 @@ export default function HeroSection({
           <Image
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-full object-top"
+            className={`w-full h-full object-top max-[1024px]:object-cover ${className}`}
             layout="fill"
           />
           <div className="absolute inset-0 bg-black/60"></div>
@@ -44,7 +43,7 @@ export default function HeroSection({
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight plus-jakarta-sans">
+            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight plus-jakarta-sans">
               {title}
             </h1>
 
@@ -56,7 +55,7 @@ export default function HeroSection({
             {/* CTA Button */}
             {showButton && (
               <div className="flex justify-center">
-                <Button iconPath={iconPath} size={buttonSize} >
+                <Button iconPath={iconPath} size={buttonSize}>
                   {buttonText}
                 </Button>
               </div>

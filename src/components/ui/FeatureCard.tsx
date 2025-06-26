@@ -7,6 +7,7 @@ interface FeatureCardProps {
   iconBgColor?: string;
   className?: string;
   titleClassName?: string;
+  iconClassName?: string;
 }
 
 export default function FeatureCard({
@@ -16,6 +17,7 @@ export default function FeatureCard({
   iconBgColor = "#2156C11A",
   className = "",
   titleClassName = "",
+  iconClassName = "",
 }: FeatureCardProps) {
   return (
     <div 
@@ -36,13 +38,13 @@ export default function FeatureCard({
             alt={title}
             width={28}
             height={28}
-            className="w-[28px] h-[28px]"
+            className={`w-[28px] h-[28px] ${iconClassName}`}
           />
         </div>
       </div>
 
       {/* Title - Centered */}
-      <h3 className={`font-[700] text-black   ${titleClassName ? titleClassName : 'text-xl mb-2'}`}>
+      <h3 className={`font-[700] text-black text-2xl sm:text-4xl   ${titleClassName ? titleClassName : 'text-xl mb-2'}`}>
         {title}
       </h3>
 

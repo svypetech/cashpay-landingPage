@@ -8,19 +8,15 @@ export default function WithdrawPage() {
   const withdrawSteps = [
     {
       number: "1.",
-      text: "Select your preferred withdrawal method - crypto or fiat.",
+      text: "Select crypto or fiat for your withdrawal method.",
     },
     {
       number: "2.",
-      text: "Enter the destination wallet address or bank account details.",
+      text: "Enter the amount and provide the destination wallet or bank account.",
     },
     {
       number: "3.",
-      text: "Confirm the amount and review transaction fees.",
-    },
-    {
-      number: "4.",
-      text: "Complete the secure withdrawal and track your transaction.",
+      text: "Confirm the withdrawal, and track its status until completed.",
     },
   ];
 
@@ -42,7 +38,7 @@ export default function WithdrawPage() {
         imageSrc="/icons/withdraw-phones.svg"
         imageAlt="Withdraw Process Mobile App"
         imagePosition="right"
-        imageClasses="w-[400px] h-[400px] sm:w-[440px] sm:h-[636px] xl:w-[500px] xl:h-[663px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]"
+        imageClasses="w-[440px] h-[636px] xl:w-[500px] xl:h-[663px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]"
       />
       <CryptoGatewayBanner className="py-25">
         <PromoBanner

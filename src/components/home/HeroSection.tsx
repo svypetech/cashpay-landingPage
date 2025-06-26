@@ -9,7 +9,7 @@ export default function HeroSection() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-bg.png"
+            src="/images/backgrounds/home-bg.png"
             alt="Crypto Background"
             fill
             className="object-cover opacity-40 rounded-lg"

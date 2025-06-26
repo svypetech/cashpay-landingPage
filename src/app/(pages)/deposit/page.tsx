@@ -27,7 +27,7 @@ export default function DepositPage() {
       <HeroSection
         title="Quick, Secure Funding"
         description="Fund your CashPay wallet effortlessly. Send crypto from any external address or use our fiat on-ramp to buy crypto via bank transfer or card—available 24/7"
-        imageSrc="/images/deposit-bg.jpg"
+        imageSrc="/images/backgrounds/deposit-bg.jpg"
         imageAlt="Deposit Background"
         buttonText="Download now"
         buttonSize="lg"
