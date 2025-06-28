@@ -57,7 +57,7 @@ export default function PromoBanner({
         }`}
       >
         <h2
-          className={`text-white text-4xl sm:text-5xl lg:text-5xl xl:text-[50px] leading-tight ${
+          className={`text-white text-4xl md:text-5xl lg:text-5xl xl:text-[50px] leading-tight ${
             isFullWidth ? "font-bold" : "font-[700]"
           } `}
         >

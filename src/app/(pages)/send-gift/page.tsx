@@ -1,3 +1,4 @@
+import ThreeColumnCards from "@/src/components/swap/ThreeColumnCards";
 import CryptoGatewayBanner from "@/src/components/ui/CryptoGatewayBanner";
 import HeroSection from "@/src/components/ui/HeroSection";
 import HowItWorksSection from "@/src/components/ui/HowItWorksSection";
@@ -17,6 +18,23 @@ const steps = [
     text: "Confirm and send the gift with instant delivery.",
   },
 ];
+const giftFeatures = [
+  {
+    title: "Easy Gift Setup",
+    description: "Choose an amount and cryptocurrency, then add a custom note and get a unique gift link or code",
+    icon: "/icons/envelope.svg",
+  },
+  {
+    title: "Instant Delivery",
+    description: "Send via text, email, or social; recipients receive crypto instantly and redeem it with one click",
+    icon: "/icons/hand-coin.svg",
+  },
+  {
+    title: "No App Required",
+    description: "Gifts work with any wallet—recipients don’t need CashPay to claim the crypto you send",
+    icon: "/icons/gift.svg",
+  }
+]
 export default function SendGiftPage() {
   return (
     <>
@@ -41,12 +59,11 @@ export default function SendGiftPage() {
         description="Sending a thoughtful crypto gift is just a few clicks away. Let’s walk you through the process"
         steps={steps}
         imageSrc="/icons/send-gift-iphone.svg"
-        imagePosition="right"
-        imageClasses="w-[1084px] h-[629px] relative"
-        
-        
-
+        imagePosition="bottom"
+        imageClasses="w-full h-full"
+        mobileImageSrc="/icons/send-gift-iphone-mobile.svg"
       />
+      <ThreeColumnCards features={giftFeatures} />
     </>
   );
 }

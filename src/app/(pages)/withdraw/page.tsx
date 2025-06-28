@@ -3,7 +3,7 @@ import Cards from "@/src/components/withdraw/Cards";
 import HowItWorksSection from "@/src/components/ui/HowItWorksSection";
 import PromoBanner from "@/src/components/ui/PromoBanner";
 import CryptoGatewayBanner from "@/src/components/ui/CryptoGatewayBanner";
-
+import ThreeColumnCards from "@/src/components/swap/ThreeColumnCards"
 export default function WithdrawPage() {
   const withdrawSteps = [
     {
@@ -19,6 +19,29 @@ export default function WithdrawPage() {
       text: "Confirm the withdrawal, and track its status until completed.",
     },
   ];
+  const withdrawFeatures = [
+    {
+      icon: "/icons/wallet-check.svg", // Update with actual icon
+      mobileIcon: "/icons/wallet-check-mobile.svg", // Update with actual mobile icon
+      title: "Flexible Payouts",
+      description:
+        "Withdraw crypto to any external wallet, or transfer fiat to your bank account, card, or preferred payment method",
+    },
+    {
+      icon: "/icons/money-time.svg", // Update with actual icon
+      mobileIcon: "/icons/money-time-mobile.svg", // Update with actual mobile icon
+      title: "Fast Processing",
+      description:
+        "Crypto withdrawals are usually instant; bank transfers typically complete within 1–3 business days",
+    },
+    {
+      icon: "/icons/discount-circle.svg", // Update with actual icon
+      mobileIcon: "/icons/discount-circle-mobile.svg", // Update with actual mobile icon
+      title: "Transparent Fees",
+      description:
+        "See fees and rates upfront before confirming. No hidden charges—just reliable withdrawals",
+    },
+  ];
 
   return (
     <>
@@ -29,8 +52,9 @@ export default function WithdrawPage() {
         imageAlt="Withdraw Background"
         buttonText="Download now"
         buttonSize="lg"
+        
       />
-      <Cards />
+      <ThreeColumnCards features={withdrawFeatures} />
       <HowItWorksSection
         title="How It Works"
         description="Withdrawing your funds is simple and secure. Choose your preferred method and get your money where you need it."
@@ -38,7 +62,7 @@ export default function WithdrawPage() {
         imageSrc="/icons/withdraw-phones.svg"
         imageAlt="Withdraw Process Mobile App"
         imagePosition="right"
-        imageClasses="w-[440px] h-[636px] xl:w-[500px] xl:h-[663px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]"
+        imageClasses="w-full h-full"
       />
       <CryptoGatewayBanner className="py-25">
         <PromoBanner

@@ -1,6 +1,6 @@
 import HowItWorksSection from "@/src/components/ui/HowItWorksSection";
 import PromoBanner from "@/src/components/ui/PromoBanner";
-import Cards from "@/src/components/deposit/Cards";
+import Cards from "@/src/components/deposit/FourColumnCards";
 import HeroSection from "@/src/components/ui/HeroSection";
 const steps = [
   {
@@ -20,6 +20,35 @@ const steps = [
     text: "Receive a confirmation and see your updated wallet balance.",
   },
 ];
+const features =  [
+    {
+      icon: "/icons/cards.svg", // Update with actual icon
+      mobileIcon: "/icons/cards-mobile.svg", // Update with actual mobile icon
+      title: "Multiple Options",
+      description:
+        "Deposit through crypto wallets or fiat methods like bank accounts.",
+    },
+    {
+      icon: "/icons/wallet-2.svg", // Update with actual icon
+      mobileIcon: "/icons/wallet-mobile.svg", // Update with actual mobile icon
+      title: "Unique Address",
+
+      description: "Generate a dedicated address for secure deposits.",
+    },
+    {
+      icon: "/icons/card-tick.svg", // Update with actual icon
+      mobileIcon: "/icons/card-tick-mobile.svg",
+      title: "Real-Time Updates",
+      // Update with actual mobile icon
+      description: "See your updated balance within seconds of deposit.",
+    },
+    {
+      icon: "/icons/security-card.svg", // Update with actual icon
+      mobileIcon: "/icons/security-card-mobile.svg", // Update with actual mobile icon
+      title: "Guaranteed Security",
+      description: "Deposits are verified and encrypted for peace of mind.",
+    },
+  ];
 
 export default function DepositPage() {
   return (
@@ -42,10 +71,10 @@ export default function DepositPage() {
         imageSrc="/icons/double-iphone-vertical.svg"
         imageAlt="CashPay Mobile App"
         imagePosition="left"
-        imageClasses="w-[400px] h-[400px]  sm:w-[450px] sm:h-[600px] xl:w-[545px] xl:h-[781px] relative max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]"
+        imageClasses="h-full w-full"
         
       />
-      <Cards />
+      <Cards features={features} />
     </div>
   );
 }

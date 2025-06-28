@@ -23,7 +23,7 @@ export default function FeatureCard({
 }: FeatureCardProps) {
   return (
     <div 
-      className={`bg-white py-8 px-8 rounded-[12px] transition-all duration-300 max-w-full lg:max-w-[358px] max-h-[264px]  ${className}`}
+      className={`bg-white py-8 px-8 rounded-[12px] transition-all duration-300 max-w-full lg:max-w-[358px] h-[264px]  ${className}`}
       style={{
         boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.08)',
         filter: 'blur(0px)'
@@ -41,7 +41,7 @@ export default function FeatureCard({
             alt={title}
             width={32}
             height={32}
-            className={`w-[32px] h-[32px] ${mobileIcon ? 'hidden sm:block' : ''} ${iconClassName}`}
+            className={`w-[40px] h-[40px] ${mobileIcon ? 'hidden sm:block' : ''} ${iconClassName}`}
           />
           
           {/* Mobile Icon - shown only on mobile */}

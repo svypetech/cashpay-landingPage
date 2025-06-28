@@ -85,7 +85,7 @@ export default function CryptoForMerchants() {
                 <img 
                   src="/icons/iPhone-15.svg" 
                   alt="CashPay Mobile App"
-                  className="w-[741px] h-[556px] relative  max-[550px]:top-[-140px] "
+                  className="h-full w-full"
                 />
               </div>
             </div>
