@@ -33,7 +33,7 @@ export default function DepositPage() {
         buttonSize="lg"
       />
       <PromoBanner
-        text="Fuel Your Wallet in Seconds"
+        title="Fuel Your Wallet in Seconds"
         description="Whether you're transferring crypto or buying with fiat, CashPay makes deposits quick, easy, and completely hassle-free."
       />
       <HowItWorksSection

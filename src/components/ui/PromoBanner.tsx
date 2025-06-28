@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 interface PromoBannerProps {
-  text: string;
+  title: string;
   showLogo?: boolean;
   logoPath?: string;
   className?: string;
@@ -11,7 +11,7 @@ interface PromoBannerProps {
 }
 
 export default function PromoBanner({
-  text,
+  title,
   showLogo = false,
   logoPath = "/icons/white-logo.svg",
   className = "",
@@ -21,10 +21,10 @@ export default function PromoBanner({
 }: PromoBannerProps) {
   return (
     <div
-      className={`relative w-full h-[408px] ${
-        !isFullWidth ? "max-w-[99%] rounded-[24px]" : ""
-      } ${
-        isFullWidth ? "px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20" : "p-[20px] px-[40px]"
+      className={`relative w-full  ${!isFullWidth ? "" : ""} ${
+        isFullWidth
+          ? "px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 h-[408px]"
+          : "sm:px-[40px] max-w-[99%] rounded-[24px] h-[508px] sm:h-[408px]"
       } flex items-center justify-center overflow-hidden ${className}`}
       style={{
         background: `linear-gradient(90deg, #C7D8FF 0%, #27AAE1 25%, #061F51 75%, #000000 100%)`,
@@ -33,18 +33,17 @@ export default function PromoBanner({
     >
       {/* Noise Texture Overlay - Lighter approach to preserve colors */}
       {showNoiseEffect && (
-        
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'url("/images/noise-effect.jpg")',
-          backgroundSize: "300px",
-          backgroundRepeat: "repeat",
-          backgroundPosition: "center",
-          mixBlendMode: "multiply",
-          opacity: 0.55,
-        }}
-      />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'url("/images/noise-effect.jpg")',
+            backgroundSize: "300px",
+            backgroundRepeat: "repeat",
+            backgroundPosition: "center",
+            mixBlendMode: "multiply",
+            opacity: 0.55,
+          }}
+        />
       )}
 
       {/* Background Image */}
@@ -52,14 +51,20 @@ export default function PromoBanner({
       {/* Main Text Content */}
       <div
         className={`relative z-10 mt-4  min-[450px]:mt-0 ${
-          isFullWidth ? "max-w-7xl mx-auto w-full" : "flex justify-center max-w-[80%]"
+          isFullWidth
+            ? "max-w-7xl mx-auto w-full"
+            : "flex flex-col justify-center max-w-[80%]"
         }`}
       >
-        <h2 className="text-white text-4xl sm:text-5xl lg:text-5xl xl:text-[50px] font-[700] font-plus-jakarta leading-tight">
-          {text}
+        <h2
+          className={`text-white text-4xl sm:text-5xl lg:text-5xl xl:text-[50px] leading-tight ${
+            isFullWidth ? "font-bold" : "font-[700]"
+          } `}
+        >
+          {title}
         </h2>
         {description && (
-          <p className="text-white text-sm min-[450px]:text-base sm:text-[24px] font-[700] font-plus-jakarta mt-8">
+          <p className="text-white text-sm min-[450px]:text-base sm:text-[24px] font-[700] mt-8">
             {description}
           </p>
         )}
@@ -67,7 +72,7 @@ export default function PromoBanner({
 
       {/* Optional Logo - Bottom Right */}
       {showLogo && (
-        <div className="absolute bottom-4 min-[450px]:bottom-8 right-4 min-[450px]:right-15 z-10">
+        <div className="absolute bottom-6 min-[450px]:bottom-8 right-4 min-[450px]:right-15 z-10">
           <Image
             src={logoPath}
             alt="Logo"

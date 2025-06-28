@@ -32,7 +32,7 @@ export default function SwapPage() {
       />
       <CoinsSection />
       <PromoBanner
-        text="Trade Without Limits"
+        title="Trade Without Limits"
         description="Skip the complexities of traditional exchanges."
         isFullWidth={true}
         showNoiseEffect={false}

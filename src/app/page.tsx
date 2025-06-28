@@ -15,7 +15,7 @@ export default function Home() {
       <WhatSetsUsApart />
       <CryptoGatewayBanner className="py-20">
         <PromoBanner
-          text="Your gateway to a smarter, faster, and more secure crypto experience."
+          title="Your gateway to a smarter, faster, and more secure crypto experience."
           showLogo={true}
           isFullWidth={false}
         />

@@ -43,9 +43,8 @@ export default function WithdrawPage() {
       <CryptoGatewayBanner className="py-25">
         <PromoBanner
           isFullWidth={false}
-          text="Cash out your crypto effortlessly with fast and secure withdrawal options for all users."
+          title="Cash out your crypto effortlessly with fast and secure withdrawal options for all users."
           showNoiseEffect={false}
-          className=""
         />
       </CryptoGatewayBanner>
     </>

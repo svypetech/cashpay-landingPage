@@ -74,14 +74,14 @@ export default function HowItWorksSection({
                     className="grid grid-cols-[auto_1fr] gap-3 items-start"
                   >
                     <span
-                      className={`text-lg text-white font-plus-jakarta leading-[1.4] ${
+                      className={`text-base sm:text-[20px] text-white font-plus-jakarta leading-[1.4] ${
                         index === 0 ? "relative left-[2px]" : ""
                       }`}
                     >
                       {step.number}
                     </span>
                     <p
-                      className={`text-white font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0 relative top-[-2px]   ${
+                      className={`text-white font-[400] text-base sm:text-[20px] font-plus-jakarta leading-[1.4] m-0 relative top-[-2px]   ${
                         step.text.startsWith("S") ? "relative left-[4px]" : step.text.startsWith("G") ? "relative left-[-4px]" : ""
                       }`}
                     >

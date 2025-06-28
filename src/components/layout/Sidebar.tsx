@@ -114,7 +114,7 @@ export default function MobileSidebar({
                         {dropdownItems.map((item, index) => (
                           <Link
                             key={index}
-                            href="#"
+                            href={item.title.toLowerCase().replace(/\s+/g, "-")}
                             className="flex flex-col py-3 font-[500] text-sm hover:bg-gray-50 hover:text-blue-600 rounded-md"
                             onClick={() => setShowMobileMenu(false)}
                           >
