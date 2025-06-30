@@ -16,7 +16,7 @@ export default function TiltedCards({
   className = "",
 }: TiltedCardsProps) {
   return (
-    <div className={`relative bg-red-500 w-[300px] ml-[-130px] left-[100px] sm:left-[100px] lg:left-[150px] xl:left-[100px] top-[-80px] min-[1200px]:w-[500px]   ${className}`}>
+    <div className={`relative bg-red-500 w-[300px] ml-[-150px] left-[100px] sm:left-[100px] lg:left-[150px] xl:left-[100px] top-[-80px] min-[1200px]:w-[500px]   ${className}`}>
       {/* Back Card - Red/Left Card */}
       <div className="absolute top-0 left-0 transform rotate-[-12] translate-x-[-90px] sm:translate-x-[-130px] translate-y-8 ">
         <Image

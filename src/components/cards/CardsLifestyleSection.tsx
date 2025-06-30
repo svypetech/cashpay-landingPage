@@ -115,6 +115,7 @@ export default function CardsLifestyleSection() {
                 title={feature.title}
                 description={feature.description}
                 mobileIcon={feature.mobileIcon}
+                titleClassName="mb-5"
                 
               />
             ))}
@@ -140,7 +141,7 @@ export default function CardsLifestyleSection() {
                 title={feature.title}
                 description={feature.description}
                 mobileIcon={feature.mobileIcon}
-                
+                titleClassName="mb-5"
               />
             ))}
           </div>

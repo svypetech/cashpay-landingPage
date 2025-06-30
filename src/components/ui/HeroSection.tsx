@@ -11,7 +11,7 @@ interface HeroSectionProps {
   buttonSize?: "sm" | "md" | "lg";
   className?: string;
   iconPath?: string;
-  bgDark?: boolean; // Optional prop to control background color
+  bgDark?: "low" | "medium" | "high" ; // Optional prop to control background color
 }
 
 export default function HeroSection({
@@ -24,7 +24,7 @@ export default function HeroSection({
   iconPath,
   buttonSize = "lg",
   className = "",
-  bgDark = false
+  bgDark = "low"
 }: HeroSectionProps) {
   return (
     <section className={`min-h-screen bg-black `}>
@@ -38,7 +38,7 @@ export default function HeroSection({
             className={`w-full h-full max-[1024px]:object-cover ${className}`}
             layout="fill"
           />
-          <div className={`absolute inset-0 ${bgDark ? "bg-black/85" : "bg-black/60"}`}></div>
+          <div className={`absolute inset-0 ${bgDark === "medium" ? "bg-black/70" : bgDark === "high"  ? "bg-black/80" : "bg-black/60"}`}></div>
         </div>
 
         {/* Content */}
@@ -50,7 +50,7 @@ export default function HeroSection({
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-[18px] text-white font-normal mb-8 max-w-3xl mx-auto leading-relaxed font-plus-jakarta opacity-80">
+            <p className="text-lg sm:text-[18px] text-white font-normal mb-8 max-w-3xl  leading-relaxed font-plus-jakarta opacity-80">
               {description}
             </p>
 

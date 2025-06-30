@@ -14,7 +14,7 @@ export default function Cards() {
         buttonText="Download now"
         buttonSize="lg"
         className="object-cover object-right"
-        bgDark={true} // Assuming you want a dark background for this section
+        bgDark="high" // Assuming you want a dark background for this section
       />
       <CardTypesSection />
       <PromoBanner

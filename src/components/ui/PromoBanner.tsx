@@ -64,7 +64,7 @@ export default function PromoBanner({
           {title}
         </h2>
         {description && (
-          <p className="text-white text-sm min-[450px]:text-base sm:text-[24px] font-[700] mt-8">
+          <p className="text-white text-sm min-[450px]:text-base sm:text-[22px] font-[700] mt-8">
             {description}
           </p>
         )}

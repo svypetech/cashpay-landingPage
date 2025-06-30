@@ -1,3 +1,4 @@
+// "use client";
 import React from "react";
 
 interface Step {
@@ -10,11 +11,12 @@ interface HowItWorksSectionProps {
   description: string;
   steps: Step[];
   imageSrc: string;
-  mobileImageSrc?: string; // New prop for mobile image
+  mobileImageSrc?: string;
   imageAlt?: string;
   imagePosition?: "left" | "right" | "bottom";
   imageClasses?: string;
   className?: string;
+  singleColumn?: boolean; // New prop
 }
 
 export default function HowItWorksSection({
@@ -22,16 +24,82 @@ export default function HowItWorksSection({
   description,
   steps,
   imageSrc,
-  mobileImageSrc, // New prop
+  mobileImageSrc,
   imageAlt = "Mobile App",
   imagePosition = "left",
   imageClasses = "w-[400px] h-[400px] lg:w-[450px] lg:h-[780px] xl:w-[500px] xl:h-[781px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]",
   className = "",
+  singleColumn = false, // Default to false
 }: HowItWorksSectionProps) {
   const isImageLeft = imagePosition === "left";
   const isImageRight = imagePosition === "right";
   const isImageBottom = imagePosition === "bottom";
 
+  // Single Column Layout
+  if (singleColumn) {
+    return (
+      <section className={`py-40 bg-dark-mode-bg ${className}`}>
+        <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <div className="max-w-7xl mx-auto">
+            {/* Content Section - Container Centered */}
+            <div className="flex justify-center mb-16">
+              <div className="max-w-2xl">
+                {/* Header */}
+                <div className="mb-12">
+                  <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
+                    {title}
+                  </h2>
+                  <p className="text-lg text-dark-mode-secondaryText font-[400] font-plus-jakarta leading-relaxed">
+                    {description}
+                  </p>
+                </div>
+
+                {/* Steps List */}
+                <ol className="space-y-6 list-none counter-reset-steps">
+                  {steps.map((step, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-4 counter-increment-step"
+                    >
+                      <span className="text-lg text-white font-plus-jakarta leading-[1.4] flex-shrink-0 ">
+                        {step.number}
+                      </span>
+                      <p className="text-white font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0">
+                        {step.text}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            {/* Image Section - Centered */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Custom CSS for counter styling */}
+        {/* <style jsx>{`
+          .counter-reset-steps {
+            counter-reset: step-counter;
+          }
+          .counter-increment-step {
+            counter-increment: step-counter;
+          }
+        `}</style> */}
+      </section>
+    );
+  }
+
+  // Original layouts (left/right/bottom) - unchanged
   return (
     <section
       className={`${
@@ -112,21 +180,21 @@ export default function HowItWorksSection({
               </div>
 
               {/* Steps List */}
-              <div className="space-y-6">
+              <ol className="space-y-6 list-none counter-reset-steps">
                 {steps.map((step, index) => (
-                  <div
+                  <li
                     key={index}
-                    className="grid grid-cols-[auto_1fr] gap-4 items-start"
+                    className="flex items-center gap-4 counter-increment-step"
                   >
-                    <span className="text-lg text-white font-plus-jakarta leading-[1.4]">
+                    <span className="text-lg text-white font-plus-jakarta leading-[1.4] flex-shrink-0">
                       {step.number}
                     </span>
                     <p className="text-white font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0">
                       {step.text}
                     </p>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
             {isImageBottom && mobileImageSrc && (
               <div className="block lg:hidden flex justify-center">
