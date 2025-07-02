@@ -109,11 +109,13 @@ export default function WhatSetsUsApart() {
 
               {/* iPhone Mockup */}
               <div className="flex justify-center mb-12">
-                <img
-                  src="/icons/iPhone-13.svg"
-                  alt="iPhone Mockup"
-                  className="w-full h-full"
-                />
+                
+                  <img
+                    src="/icons/iPhone-13.svg"
+                    alt="iPhone Mockup"
+                    className="w-full h-full scale-110"
+                  />
+                
               </div>
 
               {/* Last 3 Features */}

@@ -56,7 +56,7 @@ const allFeatures = [...lifestyleFeatures, ...additionalFeatures];
 
 export default function CardsLifestyleSection() {
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-16 lg:py-24 ">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Header */}
         <div className="text-center mb-16">
@@ -147,7 +147,7 @@ export default function CardsLifestyleSection() {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block mt-[200px]">
         <FourColumnCards features={additionalFeatures} />
       </div>
     </section>

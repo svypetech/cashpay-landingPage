@@ -10,7 +10,7 @@ export default function iPhoneDisplay({ className = "" }: iPhoneDisplayProps) {
       <img
         src="/images/iPhone-14.png"
         alt="iPhone 14"
-        className="w-full h-full"
+        className="w-full h-full scale-110"
       />
     </div>
   );

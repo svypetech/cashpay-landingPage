@@ -1,20 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import TiltedCards from "@/src/components/ui/TiltedCards";
 
 type CardType = "virtual" | "physical";
 
 interface CardData {
-  imageSrc: string;
-  backCardSrc: string; // Add back card source
+  desktopImageSrc: string;
+  mobileImageSrc: string;
   bulletPoints: string[];
 }
 
 const cardData: Record<CardType, CardData> = {
   virtual: {
-    imageSrc: "/icons/black-card.svg",
-    backCardSrc: "/icons/red-card.svg", // Add back card
+    desktopImageSrc: "/icons/cards/virtual-cards.svg",
+    mobileImageSrc: "/icons/cards/virtual-cards-mobile.svg",
     bulletPoints: [
       "Instant activation for online purchases.",
       "No risk of physical loss or theft.",
@@ -23,8 +22,8 @@ const cardData: Record<CardType, CardData> = {
     ],
   },
   physical: {
-    imageSrc: "/icons/blue-card.svg",
-    backCardSrc: "/icons/purple-card.svg", // Add back card
+    desktopImageSrc: "/icons/cards/physical-cards.svg",
+    mobileImageSrc: "/icons/cards/physical-cards-mobile.svg",
     bulletPoints: [
       "Perfect for in-store purchases.",
       "Worldwide acceptance at ATMs.",
@@ -38,11 +37,11 @@ export default function CardTypesSection() {
   const [activeTab, setActiveTab] = useState<CardType>("virtual");
 
   return (
-    <section className="py-16 bg-white h-[900px] min-[1200px]:h-[900px]">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20  h-full">
-        <div className="grid min-[1200px]:grid-cols-2 gap-16 items-center h-full">
+    <section className="py-16  bg-white h-[1000px] min-[1024px]:h-[900px]">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 h-full">
+        <div className="grid min-[1024px]:grid-cols-2 min-[1024px]:gap-16 min-[1024px]:items-center h-full">
           {/* Left side - Tabs and Image */}
-          <div className="min-[1200px]:h-full h-[65%] mb-[80px] min-[1200px]:mb-0">
+          <div className="min-[1024px]:h-full min-[1024px]:mb-[80px] min-[1024px]:mb-0 ">
             {/* Tab Buttons Container */}
             <div className="relative bg-gray-100 rounded-full p-1 inline-flex mb-12">
               {/* Sliding Background */}
@@ -59,7 +58,7 @@ export default function CardTypesSection() {
               {/* Tab Buttons */}
               <button
                 onClick={() => setActiveTab("virtual")}
-                className={`relative z-10 px-5 sm:px-10 py-2 rounded-full text-lg  sm:text-xl font-[400]  transition-colors duration-300 ${
+                className={`relative z-10 px-5 sm:px-10 py-2 rounded-full text-lg sm:text-xl font-[400] transition-colors duration-300 ${
                   activeTab === "virtual" ? "text-white" : "text-gray-800"
                 }`}
               >
@@ -67,7 +66,7 @@ export default function CardTypesSection() {
               </button>
               <button
                 onClick={() => setActiveTab("physical")}
-                className={`relative z-10 px-5 sm:px-10 py-2 rounded-full text-lg  sm:text-xl font-[400]  transition-colors duration-300 ${
+                className={`relative z-10 px-5 sm:px-10 py-2 rounded-full text-lg sm:text-xl font-[400] transition-colors duration-300 ${
                   activeTab === "physical" ? "text-white" : "text-gray-800"
                 }`}
               >
@@ -76,37 +75,52 @@ export default function CardTypesSection() {
             </div>
 
             {/* Card Image */}
-            <div className="flex justify-center  ">
+            <div className="flex justify-center">
               <div
                 key={activeTab}
-                className="relative transition-all duration-500 ease-in-out transform animate-slideIn "
+                className="relative transition-all duration-500 ease-in-out transform animate-slideIn"
               >
-                <TiltedCards
-                  frontCardSrc={cardData[activeTab].imageSrc}
-                  backCardSrc={cardData[activeTab].backCardSrc}
-                  frontCardAlt={`${activeTab} card front`}
-                  backCardAlt={`${activeTab} card back`}
+                {/* Desktop Image */}
+                <img
+                  src={cardData[activeTab].desktopImageSrc}
+                  alt={`${activeTab} cards desktop`}
+                  className="hidden lg:block w-full h-full  scale-110"
+                  
+                />
+
+                {/* Mobile Image */}
+                <img
+                  src={cardData[activeTab].mobileImageSrc}
+                  alt={`${activeTab} cards mobile`}
+                  className="block lg:hidden w-full h-full scale-110"
                 />
               </div>
             </div>
           </div>
 
           {/* Right side - Bullet Points */}
-          <div className="flex min-[1200px]:items-center justify-center min-[1200px]:justify-start min-[1200px]:h-full h-[35%]  relative ">
-            <ul className="space-y-6 list-disc list-inside">
+          <div className="flex min-[1024px]:items-center justify-center min-[1024px]:justify-start min-[1024px]:h-full h-[70%] relative">
+            <div className="space-y-6">
               {cardData[activeTab].bulletPoints.map((point, index) => (
-                <li
+                <div
                   key={`${activeTab}-${index}`}
-                  className="text-xl sm:text-2xl text-primaryText2 font-[500] leading-relaxed opacity-0 animate-fadeIn"
+                  className="flex items-start space-x-3 opacity-0 animate-fadeIn"
                   style={{
                     animationDelay: `${index * 100}ms`,
                     animationFillMode: "forwards",
                   }}
                 >
-                  {point}
-                </li>
+                  {/* Custom small bullet */}
+                  <div className="flex items-center gap-4">
+
+                  <div className="w-2 h-2 bg-primaryText2 rounded-full mt-2.5 flex-shrink-0 relative top-[-3px]"></div>
+                  <p className="text-xl sm:text-2xl text-primaryText2 font-[500] leading-relaxed">
+                    {point}
+                  </p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

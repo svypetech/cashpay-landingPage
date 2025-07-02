@@ -79,22 +79,14 @@ export default function HowItWorksSection({
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className="w-full h-full"
+                  className={`${imageClasses} w-full h-full`}
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Custom CSS for counter styling */}
-        {/* <style jsx>{`
-          .counter-reset-steps {
-            counter-reset: step-counter;
-          }
-          .counter-increment-step {
-            counter-increment: step-counter;
-          }
-        `}</style> */}
+        
       </section>
     );
   }

@@ -20,7 +20,7 @@ export default function Cards({features}: { features: SwapFeature[] }) {
               title={feature.title}
               mobileIcon={feature.mobileIcon}
               description={feature.description}
-              className="lg:max-w-full w-full h-[282px] lg:h-[402px] px-9 lg:py-[40px]"
+              className="lg:max-w-full w-full h-[332px] lg:h-[402px] px-9 lg:py-[40px]"
               titleClassName="w-full mb-6 sm:text-4xl text-2xl"
               iconClassName="w-[35px] h-[35px]"
               key={index}
