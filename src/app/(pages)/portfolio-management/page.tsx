@@ -1,6 +1,6 @@
 import HeroSection from "@/src/components/ui/HeroSection";
 import HowItWorksSection from "@/src/components/ui/HowItWorksSection";
-
+import InvestmentSection from "@/src/components/portfolio/Investments";
 const features = [
   {
     number: "1.",
@@ -36,7 +36,9 @@ export default function PortfolioManagementPage() {
         imagePosition="left"
         steps={features}
         imageClasses="w-full h-full"
+        isDark={false}
       />
+      <InvestmentSection />
     </>
   );
 }

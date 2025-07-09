@@ -17,6 +17,7 @@ interface HowItWorksSectionProps {
   imageClasses?: string;
   className?: string;
   singleColumn?: boolean; // New prop
+  isDark?: boolean; // New prop for dark mode
 }
 
 export default function HowItWorksSection({
@@ -30,6 +31,7 @@ export default function HowItWorksSection({
   imageClasses = "w-[400px] h-[400px] lg:w-[450px] lg:h-[780px] xl:w-[500px] xl:h-[781px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]",
   className = "",
   singleColumn = false, // Default to false
+  isDark = true, // New prop for dark mode
 }: HowItWorksSectionProps) {
   const isImageLeft = imagePosition === "left";
   const isImageRight = imagePosition === "right";
@@ -38,33 +40,55 @@ export default function HowItWorksSection({
   // Single Column Layout
   if (singleColumn) {
     return (
-      <section className={`py-40 bg-dark-mode-bg ${className}`}>
+      <section
+        className={`py-40 ${
+          isDark ? "bg-dark-mode-bg" : "bg-white"
+        }  ${className}`}
+      >
         <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-          <div className="max-w-7xl mx-auto">
+          <div className="">
             {/* Content Section - Container Centered */}
             <div className="flex justify-center mb-16">
               <div className="max-w-2xl">
                 {/* Header */}
                 <div className="mb-12">
-                  <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
+                  <h2
+                    className={`text-4xl lg:text-5xl font-[700]  mb-6 font-plus-jakarta leading-tight ${
+                      isDark ? "text-white" : "text-primaryText2"
+                    }`}
+                  >
                     {title}
                   </h2>
-                  <p className="text-lg text-dark-mode-secondaryText font-[400] font-plus-jakarta leading-relaxed">
+                  <p
+                    className={`text-lg  font-[600] font-plus-jakarta leading-relaxed ${
+                      isDark
+                        ? "text-dark-mode-secondaryText"
+                        : "text-secondaryText"
+                    }`}
+                  >
                     {description}
                   </p>
                 </div>
 
                 {/* Steps List */}
-                <ol className="space-y-6 list-none counter-reset-steps">
+                <ol className="space-y-6 list-none ">
                   {steps.map((step, index) => (
                     <li
                       key={index}
-                      className="flex items-center gap-4 counter-increment-step"
+                      className="flex items-start gap-2 "
                     >
-                      <span className="text-lg text-white font-plus-jakarta leading-[1.4] flex-shrink-0 ">
+                      <span
+                        className={`text-lg font-plus-jakarta leading-[1.4] flex-shrink-0 mt-0.5 ${
+                          isDark ? "text-white" : "text-primaryText2"
+                        }`}
+                      >
                         {step.number}
                       </span>
-                      <p className="text-white font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0">
+                      <p
+                        className={`font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0 ${
+                          isDark ? "text-white" : "text-primaryText2"
+                        }`}
+                      >
                         {step.text}
                       </p>
                     </li>
@@ -85,8 +109,6 @@ export default function HowItWorksSection({
             </div>
           </div>
         </div>
-
-        
       </section>
     );
   }
@@ -96,9 +118,9 @@ export default function HowItWorksSection({
     <section
       className={`${
         isImageBottom ? "relative" : ""
-      } py-20 bg-dark-mode-bg max-[450px]:max-h-[1150px] max-[500px]:pb-30 max-[380px]:max-h-[1200px] ${
+      } py-20  max-[450px]:max-h-[1150px] max-[500px]:pb-30 max-[380px]:max-h-[1200px] ${
         isImageBottom ? "overflow-hidden sm:py-40" : ""
-      } ${className}`}
+      } ${className} ${isDark ? "bg-dark-mode-bg" : "bg-white"}`}
     >
       {/* Bottom positioned image - absolutely positioned like DownloadSection */}
       {isImageBottom && (
@@ -163,25 +185,43 @@ export default function HowItWorksSection({
             >
               {/* Header */}
               <div className="mb-12">
-                <h2 className="w-full text-4xl lg:text-5xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
+                <h2
+                  className={`text-4xl lg:text-5xl font-[700]   mb-6 font-plus-jakarta leading-tight ${
+                    isDark ? "text-white" : "text-primaryText2"
+                  }`}
+                >
                   {title}
                 </h2>
-                <p className="text-lg text-dark-mode-secondaryText font-[400] font-plus-jakarta leading-relaxed max-w-lg">
+                <p
+                  className={`text-lg  font-[600] font-plus-jakarta leading-relaxed ${
+                    isDark
+                      ? "text-dark-mode-secondaryText"
+                      : "text-secondaryText"
+                  }`}
+                >
                   {description}
                 </p>
               </div>
 
               {/* Steps List */}
-              <ol className="space-y-6 list-none counter-reset-steps">
+              <ol className="space-y-6 list-none">
                 {steps.map((step, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-4 counter-increment-step"
+                    className="flex items-start gap-2 "
                   >
-                    <span className="text-lg text-white font-plus-jakarta leading-[1.4] flex-shrink-0">
+                    <span
+                      className={`text-lg font-plus-jakarta leading-[1.4] flex-shrink-0 mt-0.5 ${
+                        isDark ? "text-white" : "text-primaryText2"
+                      }`}
+                    >
                       {step.number}
                     </span>
-                    <p className="text-white font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0">
+                    <p
+                      className={`font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0 ${
+                        isDark ? "text-white" : "text-primaryText2"
+                      }`}
+                    >
                       {step.text}
                     </p>
                   </li>

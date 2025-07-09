@@ -38,11 +38,21 @@
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff2")
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Regular.woff2")
       format("woff2"),
-    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff")
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Regular.woff")
       format("woff");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-ExtraBold.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-ExtraBold.woff")
+      format("woff");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
