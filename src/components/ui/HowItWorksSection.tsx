@@ -46,7 +46,7 @@ export default function HowItWorksSection({
         }  ${className}`}
       >
         <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-          <div className="">
+          <div className="max-w-7xl mx-auto">
             {/* Content Section - Container Centered */}
             <div className="flex justify-center mb-16">
               <div className="max-w-2xl">
@@ -73,19 +73,16 @@ export default function HowItWorksSection({
                 {/* Steps List */}
                 <ol className="space-y-6 list-none ">
                   {steps.map((step, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 "
-                    >
+                    <li key={index} className="flex items-start gap-2 ">
                       <span
-                        className={`text-lg font-plus-jakarta leading-[1.4] flex-shrink-0 mt-0.5 ${
+                        className={`text-lg font-[300] leading-[1.4] flex-shrink-0 mt-0.5 ${
                           isDark ? "text-white" : "text-primaryText2"
                         }`}
                       >
                         {step.number}
                       </span>
                       <p
-                        className={`font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0 ${
+                        className={`font-[300] text-[20px]  leading-[1.4] m-0 ${
                           isDark ? "text-white" : "text-primaryText2"
                         }`}
                       >
@@ -99,12 +96,13 @@ export default function HowItWorksSection({
 
             {/* Image Section - Centered */}
             <div className="flex justify-center">
-              <div className="relative">
+              <div className="relative flex">
                 <img
                   src={imageSrc}
                   alt={imageAlt}
                   className={`${imageClasses} w-full h-full`}
                 />
+
               </div>
             </div>
           </div>
@@ -206,19 +204,16 @@ export default function HowItWorksSection({
               {/* Steps List */}
               <ol className="space-y-6 list-none">
                 {steps.map((step, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 "
-                  >
+                  <li key={index} className="flex items-start gap-2 ">
                     <span
-                      className={`text-lg font-plus-jakarta leading-[1.4] flex-shrink-0 mt-0.5 ${
+                      className={`text-lg font-[300] leading-[1.4] flex-shrink-0 mt-0.5 ${
                         isDark ? "text-white" : "text-primaryText2"
                       }`}
                     >
                       {step.number}
                     </span>
                     <p
-                      className={`font-[400] text-[20px] font-plus-jakarta leading-[1.4] m-0 ${
+                      className={`font-[300] text-[20px]  leading-[1.4] m-0 ${
                         isDark ? "text-white" : "text-primaryText2"
                       }`}
                     >

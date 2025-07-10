@@ -17,12 +17,15 @@ const walletFeatures = [
     description:
       "Private keys never leave your device; two-factor authentication and encrypted backups keep your funds safe",
     icon: "/icons/key.svg",
+    mobileIcon: "/icons/key-mobile.svg"
   },
   {
     title: "Real-Time Monitoring",
     description:
       "View live price updates and get instant alerts so you can monitor your portfolio’s value around the clock",
     icon: "/icons/trend-up.svg",
+    mobileIcon: "/icons/trend-up-mobile.svg"
+
   },
 ];
 export default function WalletFeaturesPage() {

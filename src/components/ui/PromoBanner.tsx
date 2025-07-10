@@ -24,7 +24,7 @@ export default function PromoBanner({
       className={`relative w-full  ${!isFullWidth ? "" : ""} ${
         isFullWidth
           ? "px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 h-[408px]"
-          : "sm:px-[40px] max-w-[99%] rounded-[24px] h-[508px] sm:h-[408px]"
+          : "sm:px-[40px] max-w-[99%] rounded-[12px] sm:rounded-[24px] h-[478px] sm:h-[408px]"
       } flex items-center justify-center overflow-hidden ${className}`}
       style={{
         background: `linear-gradient(90deg, #C7D8FF 0%, #27AAE1 25%, #061F51 75%, #000000 100%)`,
@@ -64,7 +64,7 @@ export default function PromoBanner({
           {title}
         </h2>
         {description && (
-          <p className="text-white text-sm min-[450px]:text-base sm:text-[22px] font-[700] mt-8">
+          <p className="text-white text-lg  sm:text-[22px] font-[700] mt-8 sm:max-w-full max-w-[250px]">
             {description}
           </p>
         )}
