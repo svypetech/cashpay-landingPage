@@ -15,7 +15,7 @@ export default function WhatSetsUsApart() {
         "Hot wallet infrastructure ensuring fast and safe operations",
     },
     {
-      icon: "/icons/status-up.svg", // Update with actual icon name
+      icon: "/icons/status-up-mobile.svg", // Update with actual icon name
       title: "Real-Time Insights",
       description: "Live price alerts and portfolio performance tracking",
     },

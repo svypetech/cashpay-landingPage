@@ -154,7 +154,11 @@ export default function Navbar() {
               >
                 <span className="sr-only">Open main menu</span>
                 <Image
-                  src="/icons/hamburger.svg"
+                  src={
+                    isScrolled
+                      ? "/icons/hamburger-black.svg"
+                      : "/icons/hamburger.svg"
+                  }
                   alt="Menu"
                   width={24}
                   height={24}
