@@ -51,6 +51,7 @@ const config: Config = {
         },
       },
       screens: {
+        'xs': { "min": "480px" },
         '3xl': { "min": "1736px" },
         '4xl': { 'min': '1936px' },
       },
