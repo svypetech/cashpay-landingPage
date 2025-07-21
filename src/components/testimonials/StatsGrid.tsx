@@ -44,12 +44,12 @@ export default function StatsGrid() {
   ];
 
   return (
-    <section className="py-20 bg-dark-mode-bg">
+    <section className="py-23 bg-dark-mode-bg">
       <header className="space-y-4 sm:text-center mb-16 px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <h1 className="text-5xl text-dark-mode-secondary font-[700]">
+        <h1 className="text-4xl sm:text-5xl text-dark-mode-secondary font-[700]">
           Built on Trust, Backed by Numbers
         </h1>
-        <p className="text-lg font-[600] text-white">
+        <p className="text-base sm:text-lg font-[600] text-white">
           Our journey is defined by the success stories of millions of users
           worldwide
         </p>
@@ -61,11 +61,11 @@ export default function StatsGrid() {
           <div className="lg:hidden space-y-4">
             {/* 1. People - Taller */}
             <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-12 h-[380px]">
-              <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3 ">
+              <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3 ">
                 <img
                   src={stats[0].mobileIcon}
                   alt={stats[0].title}
-                  className="w-[40%] h-[40%]"
+                  className="w-[50%] h-[50%]"
                 />
               </div>
               <h3 className="text-4xl font-bold text-white mb-4 max-w-[250px]">
@@ -78,11 +78,11 @@ export default function StatsGrid() {
 
             {/* 2. Countries */}
             <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-8 h-auto">
-              <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
+              <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
                 <img
                   src={stats[1].icon}
                   alt={stats[1].title}
-                  className="w-[40%] h-[40%]"
+                  className="w-[50%] h-[50%]"
                 />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
@@ -95,11 +95,11 @@ export default function StatsGrid() {
 
             {/* 3. Transactions - Taller */}
             <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-12 h-[380px]">
-              <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
+              <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
                 <img
                   src={stats[2].icon}
                   alt={stats[2].title}
-                  className="w-[40%] h-[40%]"
+                  className="w-[50%] h-[50%]"
                 />
               </div>
               <h3 className="text-4xl font-bold text-white mb-10">
@@ -112,11 +112,11 @@ export default function StatsGrid() {
 
             {/* 4. Uptime */}
             <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-12 h-auto">
-              <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
+              <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
                 <img
                   src={stats[3].mobileIcon}
                   alt={stats[3].title}
-                  className="w-[40%] h-[40%]"
+                  className="w-[50%] h-[50%]"
                 />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
@@ -129,11 +129,11 @@ export default function StatsGrid() {
 
             {/* 5. Merchants */}
             <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-12 h-auto">
-              <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
+              <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-3">
                 <img
                   src={stats[4].icon}
                   alt={stats[4].title}
-                  className="w-[40%] h-[40%]"
+                  className="w-[50%] h-[50%]"
                 />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
@@ -151,11 +151,11 @@ export default function StatsGrid() {
             <div className="">
               {/* Top card - 10+ Million */}
               <div className="bg-[#1E1E1E] rounded-[12px] px-8 py-12 mb-4 w-full h-[52%]">
-                <div className="w-17 h-17 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-10">
+                <div className="w-15 h-15 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary mb-10">
                   <img
                     src={stats[0].icon}
                     alt={stats[0].title}
-                    className="w-[40%] h-[40%]"
+                    className="w-[50%] h-[50%]"
                   />
                 </div>
                 <h3 className="text-3xl lg:text-6xl font-bold text-white mb-4">
@@ -174,7 +174,7 @@ export default function StatsGrid() {
                     <img
                       src={stats[3].icon}
                       alt={stats[3].title}
-                      className="w-[60%] h-[60%]"
+                      className="w-[50%] h-[50%]"
                     />
                   </div>
                   <h3 className="text-2xl lg:text-4xl font-bold text-white mb-4">
@@ -191,7 +191,7 @@ export default function StatsGrid() {
                     <img
                       src={stats[4].icon}
                       alt={stats[4].title}
-                      className="w-[60%] h-[60%]"
+                      className="w-[50%] h-[50%]"
                     />
                   </div>
                   <h3 className="text-2xl lg:text-4xl font-bold text-white mb-4 max-w-[150px]">
@@ -212,7 +212,7 @@ export default function StatsGrid() {
                   <img
                     src={stats[1].icon}
                     alt={stats[1].title}
-                    className="w-[60%] h-[60%]"
+                    className="w-[50%] h-[50%]"
                   />
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
@@ -229,7 +229,7 @@ export default function StatsGrid() {
                   <img
                     src={stats[2].icon}
                     alt={stats[2].title}
-                    className="w-[60%] h-[60%]"
+                    className="w-[50%] h-[50%]"
                   />
                 </div>
                 <h3 className="text-2xl lg:text-4xl font-bold text-white mb-4 max-w-[300px]">

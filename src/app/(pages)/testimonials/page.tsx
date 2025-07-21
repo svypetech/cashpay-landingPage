@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSection from "@/src/components/ui/HeroSection";
 import StatsGrid from "@/src/components/testimonials/StatsGrid";
+import Testimonials from "@/src/components/home/Testimonials";
+import GlobeSection from "./GlobeSection";
 
 export default function AboutUsPage() {
   return (
@@ -14,6 +16,8 @@ export default function AboutUsPage() {
         bgDark="high"
       />
       <StatsGrid />
+      <Testimonials />
+      <GlobeSection />
       {/* Add other about us sections here */}
     </>
   );

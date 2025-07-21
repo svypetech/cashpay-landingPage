@@ -148,10 +148,10 @@ export default function Testimonials() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 font-plus-jakarta">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 ">
               Hear From Our Users
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl lg:max-w-3xl mx-auto font-plus-jakarta px-4 sm:px-0">
+            <p className="text-base sm:text-lg text-secondaryText max-w-2xl lg:max-w-3xl mx-auto font-[600]  px-4 sm:px-0">
               Trusted by thousands—discover how CashPay is transforming lives in
               the crypto world
             </p>

@@ -96,11 +96,11 @@ export default function HowItWorksSection({
 
             {/* Image Section - Centered */}
             <div className="flex justify-center">
-              <div className="relative flex">
+              <div className="relative flex relative overflow-hidden h-[200px] sm:h-[300px]">
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className={`${imageClasses} w-full h-full`}
+                  className={`${imageClasses} w-full h-full  scale-110`}
                 />
 
               </div>
