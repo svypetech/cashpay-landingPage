@@ -109,6 +109,18 @@
 }
 
 @font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2")
       format("woff2"),
