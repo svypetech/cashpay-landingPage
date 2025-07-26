@@ -58,10 +58,10 @@ export default function SendGiftPage() {
       <HowItWorksSection
         description="Sending a thoughtful crypto gift is just a few clicks away. Let’s walk you through the process"
         steps={steps}
-        imageSrc="/icons/send-gift-iphone.svg"
+        imageSrc="/icons/gift-iPhone.svg"
         imagePosition="bottom"
         imageClasses="w-full h-full"
-        mobileImageSrc="/icons/send-gift-iphone-mobile.svg"
+        mobileImageSrc="/icons/gift-iPhone-mobile.svg"
       />
       <ThreeColumnCards features={giftFeatures} />
     </>

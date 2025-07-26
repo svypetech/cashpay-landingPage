@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-[#061F51] text-white">
       {/* Main Footer Content */}
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-12 lg:py-16 ">
-        <div className="max-w-7xl mx-auto">
+        <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[50%_25%_15%] gap-8 lg:gap-16 max-w-full">
             {/* Logo and Description */}
             <div className="lg:col-span-1 max-[450px]:mb-8">
@@ -59,15 +59,13 @@ export default function Footer() {
             </div>
 
             {/* Get App */}
-            <div className="lg:col-span-1 flex flex-col lg:items-end">
-              <div className="flex justify-start w-full  xl:px-5 white-space-nowrap">
-                <h3 className=" text-white font-satoshi font-[700] text-[25px] mb-4 text-left">
+            <div className="lg:col-span-1 lg:items-end">
+              <div className="flex-col justify-start w-full white-space-nowrap">
+                <h3 className=" text-white font-satoshi font-[700] text-[25px] mb-4 text-left relative left-[5px]">
                   Get App
                 </h3>
-              </div>
+                <div className="flex flex-row lg:flex-col  relative left-[-5px] ">
 
-              {/* App Store Buttons - Smaller size */}
-              <div className="flex flex-col flex-row lg:flex-col  relative left-[-5px] ">
                 <a href="#" className="block">
                   <Image
                     src="/icons/PlayStore.svg"
@@ -86,8 +84,11 @@ export default function Footer() {
                     className="w-[130px] sm:w-[171px] hover:opacity-80 transition-opacity"
                   />
                 </a>
+                </div>
               </div>
             </div>
+
+            {/* App Store Buttons - Smaller size */}
           </div>
 
           {/* Navigation Links - Above the horizontal line */}
@@ -172,7 +173,7 @@ export default function Footer() {
       {/* Copyright Section */}
       <div className="bg-[#1B4284] py-4">
         <div className="w-full px-6 md:px-8 lg:px-12">
-          <div className="max-w-7xl mx-auto">
+          <div className="">
             <p className="text-center text-white/90 text-xs sm:text-sm font-poppins font-[500]">
               Copyright © 2025 Cashpay
             </p>

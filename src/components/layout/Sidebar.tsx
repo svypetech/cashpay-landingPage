@@ -116,7 +116,10 @@ export default function MobileSidebar({
                             key={index}
                             href={item.title.toLowerCase().replace(/\s+/g, "-")}
                             className="flex flex-col py-3 font-[500] text-sm hover:bg-gray-50 hover:text-blue-600 rounded-md"
-                            onClick={() => setShowMobileMenu(false)}
+                            onClick={() => {
+                              setShowMobileMenu(false);
+                              setShowMobileFeatures(false);
+                            }}
                           >
                             {item.title}
                           </Link>
@@ -129,7 +132,9 @@ export default function MobileSidebar({
                   <Link
                     href={link.href}
                     className="block py-4 border-b-[1px] border-[#0000001A] hover:bg-gray-50"
-                    onClick={() => setShowMobileMenu(false)}
+                    onClick={() => {
+                      setShowMobileMenu(false);
+                    }}
                   >
                     {link.name}
                   </Link>
@@ -141,12 +146,14 @@ export default function MobileSidebar({
 
         {/* Get App Button - Fixed at bottom */}
         <div className="p-6 border-t border-gray-100 flex-shrink-0">
-          <button
-            className="w-full bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Get App
-          </button>
+          <Link href="/get-app">
+            <button
+              className="w-full bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Get App
+            </button>
+          </Link>
         </div>
       </div>
     </div>

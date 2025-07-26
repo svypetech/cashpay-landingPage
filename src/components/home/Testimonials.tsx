@@ -144,8 +144,8 @@ export default function Testimonials() {
 
   return (
     <section className="py-12 sm:py-16 lg:py-40 bg-white">
-      <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <div className="max-w-7xl mx-auto">
+      <div className="w-full md:pl-16 lg:pl-10 xl:pl-20 2xl:pl-30">
+        <div className="mx-auto">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-14 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-6 ">
@@ -163,10 +163,10 @@ export default function Testimonials() {
             <div className="hidden lg:block ml-[-10px]">
               <div
                 className="overflow-hidden"
-                style={{ width: "1350px", maxWidth: "100%" }}
+                style={{  maxWidth: "100%" }}
               >
                 <div
-                  className="flex transition-transform duration-500 ease-in-out gap-[10px]"
+                  className="flex transition-transform duration-500 ease-in-out gap-[25px]"
                   style={{
                     transform: `translateX(-${currentIndex * (520 + 10)}px)`,
                     width: `${testimonials.length * (520 + 10)}px`,

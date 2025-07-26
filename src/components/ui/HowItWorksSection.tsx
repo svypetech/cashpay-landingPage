@@ -28,7 +28,7 @@ export default function HowItWorksSection({
   mobileImageSrc,
   imageAlt = "Mobile App",
   imagePosition = "left",
-  imageClasses = "w-[400px] h-[400px] lg:w-[450px] lg:h-[780px] xl:w-[500px] xl:h-[781px] max-[450px]:w-[350px] max-[450px]:h-[350px] max-[380px]:w-[300px] max-[380px]:h-[300px]",
+  imageClasses = "",
   className = "",
   singleColumn = false, // Default to false
   isDark = true, // New prop for dark mode
@@ -75,14 +75,14 @@ export default function HowItWorksSection({
                   {steps.map((step, index) => (
                     <li key={index} className="flex items-start gap-2 ">
                       <span
-                        className={`text-lg font-[300] leading-[1.4] flex-shrink-0 mt-0.5 ${
+                        className={`text-lg font-[400] leading-[1.4] flex-shrink-0 mt-0.5 ${
                           isDark ? "text-white" : "text-primaryText2"
                         }`}
                       >
                         {step.number}
                       </span>
                       <p
-                        className={`font-[300] text-[20px]  leading-[1.4] m-0 ${
+                        className={`font-[400] text-[20px]  leading-[1.4] m-0 ${
                           isDark ? "text-white" : "text-primaryText2"
                         }`}
                       >
@@ -96,13 +96,24 @@ export default function HowItWorksSection({
 
             {/* Image Section - Centered */}
             <div className="flex justify-center">
-              <div className="relative flex relative overflow-hidden h-[200px] sm:h-[300px]">
+              <div className="relative">
                 <img
                   src={imageSrc}
                   alt={imageAlt}
-                  className={`${imageClasses} w-full h-full  scale-110`}
+                  className={`${imageClasses} w-full h-full hidden sm:block`}
                 />
-
+                <img
+                  src={mobileImageSrc}
+                  alt={imageAlt}
+                  className={`${imageClasses} w-full h-full block sm:hidden`}
+                />
+                <div className="absolute bottom-[0px] center-x-1/2 h-full">
+                  <img
+                    src="/icons/iPhone-ellipse.svg"
+                    alt="Ellipse effect"
+                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -116,7 +127,7 @@ export default function HowItWorksSection({
     <section
       className={`${
         isImageBottom ? "relative" : ""
-      } py-20  max-[450px]:max-h-[1150px] max-[500px]:pb-30 max-[380px]:max-h-[1200px] ${
+      } py-20  max-[500px]:pb-30  ${
         isImageBottom ? "overflow-hidden sm:py-40" : ""
       } ${className} ${isDark ? "bg-dark-mode-bg" : "bg-white"}`}
     >
@@ -150,7 +161,7 @@ export default function HowItWorksSection({
                   isImageLeft ? "order-1 lg:order-1" : "order-2 lg:order-2"
                 } ${!isImageLeft ? "lg:justify-end" : ""}`}
               >
-                <div className="relative">
+                <div className="relative h-full">
                   {/* Desktop Image */}
                   <img
                     src={imageSrc}
@@ -165,6 +176,13 @@ export default function HowItWorksSection({
                       className={`relative ${imageClasses} block lg:hidden`}
                     />
                   )}
+                  <div className="absolute bottom-[-430px] center-x-1/2 h-full">
+                    <img
+                      src="/icons/iPhone-ellipse.svg"
+                      alt="Ellipse effect"
+                      className=" w-[300px] h-[300px] lg:w-[700px] h-auto z-40"
+                    />
+                  </div>
 
                   {/* Mobile Image - if provided */}
                 </div>
@@ -206,14 +224,14 @@ export default function HowItWorksSection({
                 {steps.map((step, index) => (
                   <li key={index} className="flex items-start gap-2 ">
                     <span
-                      className={`text-lg font-[300] leading-[1.4] flex-shrink-0 mt-0.5 ${
+                      className={`text-lg font-[400] leading-[1.4] flex-shrink-0 mt-0.5 ${
                         isDark ? "text-white" : "text-primaryText2"
                       }`}
                     >
                       {step.number}
                     </span>
                     <p
-                      className={`font-[300] text-[20px]  leading-[1.4] m-0 ${
+                      className={`font-[400] text-[20px]  leading-[1.4] m-0 ${
                         isDark ? "text-white" : "text-primaryText2"
                       }`}
                     >
@@ -224,12 +242,19 @@ export default function HowItWorksSection({
               </ol>
             </div>
             {isImageBottom && mobileImageSrc && (
-              <div className="block lg:hidden flex justify-center">
+              <div className="relative block lg:hidden flex justify-center">
                 <img
                   src={mobileImageSrc}
                   alt={imageAlt}
                   className="w-full h-full"
                 />
+                <div className="absolute bottom-[0px] center-x-1/2 h-full">
+                  <img
+                    src="/icons/iPhone-ellipse.svg"
+                    alt="Ellipse effect"
+                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                  />
+                </div>
               </div>
             )}
           </div>

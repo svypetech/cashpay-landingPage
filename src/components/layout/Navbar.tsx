@@ -103,12 +103,14 @@ export default function Navbar() {
                   <div key={link.name} className="relative">
                     <Link
                       href={link.href}
-                      className={`relative px-3 py-2 text-sm transition-all duration-200 opacity-60 hover:opacity-100 group ${
+                      className={`relative px-3 py-2 text-sm transition-all duration-200 opacity-60 hover:opacity-100 group text-[#FFFFFF] ${
                         showDropdown && link.name === "Features"
-                          ? "bg-[#27AAE11A] rounded-lg text-black hover:text-black opacity-100"
-                          : isScrolled && !showDropdown
+                          ? "hover:bg-[#27AAE11A] rounded-lg text-primaryText2"
+                          : showDropdown
+                          ? "text-primaryText2"
+                          : isScrolled
                           ? "text-primaryText hover:text-black"
-                          : "text-[#B3B3B3] hover:text-white"
+                          : ""
                       }`}
                       onMouseEnter={() => {
                         if (link.hasDropdown) {
@@ -136,9 +138,11 @@ export default function Navbar() {
 
             {/* Get App Button */}
             <div className="hidden lg:block">
-              <button className="bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600">
-                Get App
-              </button>
+              <Link href="/get-app">
+                <button className="bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600">
+                  Get App
+                </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}

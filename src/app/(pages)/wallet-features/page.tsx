@@ -64,8 +64,9 @@ export default function WalletFeaturesPage() {
           },
         ]}
         imageSrc="/icons/iPhones/wallet-iPhone.svg"
+        mobileImageSrc="/icons/iPhones/wallet-iPhone-mobile.svg"
         singleColumn={true}
-        imageClasses="scale-130"
+        
       />
       <ThreeColumnCards features={walletFeatures} />
     </>

@@ -78,7 +78,8 @@ export default function Home() {
         description="Whether you're a seasoned trader or just starting out, CashPay is here to help you succeed."
         cardDetails={missionCards}
         imageSrc="/icons/iPhones/wallet-iPhone.svg"
-        imageClasses="scale-130"
+        imageClasses=""
+        mobileImageSrc="/icons/iPhones/wallet-iPhone-mobile.svg"
       />
       <WhyCashpay features={swapFeatures} />
       <BottomSection />

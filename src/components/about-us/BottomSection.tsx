@@ -4,6 +4,7 @@ export default function BottomSection() {
   return (
     <section className="relative bg-dark-mode-bg py-25  lg:max-h-[300px]  lg:min-h-[670px] h-[800px] sm:h-[700px] overflow-hidden">
       {/* Background Ellipses */}
+
       <div className="absolute bottom-[-90px]">
         <Image
           src="/icons/bottom-ellipse.svg"
@@ -31,10 +32,10 @@ export default function BottomSection() {
       </div>
 
       <div className="relative z-10 w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <div className="max-w-[789px] mx-10">
+        <div className="max-w-7xl mx-auto">
           <div className="items-center gap-12 lg:gap-16 ">
             {/* Left Content */}
-            <div className="text-left lg:max-w-xl xl:max-w-5xl">
+            <div className="text-left lg:max-w-xl xl:max-w-3xl">
               <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
                 Join thousands who trust 
                 <span className="text-dark-mode-secondary"> CashPay </span>

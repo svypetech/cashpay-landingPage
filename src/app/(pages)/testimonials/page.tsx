@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "@/src/components/ui/HeroSection";
+import HeroSectionPages from "@/src/components/ui/HeroSectionPages";
 import StatsGrid from "@/src/components/testimonials/StatsGrid";
 import Testimonials from "@/src/components/home/Testimonials";
 import GlobeSection from "./GlobeSection";
@@ -7,13 +7,10 @@ import GlobeSection from "./GlobeSection";
 export default function AboutUsPage() {
   return (
     <>
-      <HeroSection
+      <HeroSectionPages
         title="Why Millions Trust CashPay"
         description="Start your journey with us today!"
-        imageSrc="/images/backgrounds/about-bg.jpg"
-        imageAlt="About CashPay Background"
-        showButton={false}
-        bgDark="high"
+        showNoiseEffect={false}
       />
       <StatsGrid />
       <Testimonials />

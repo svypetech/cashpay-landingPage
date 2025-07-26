@@ -40,7 +40,7 @@ export default function WhatSetsUsApart() {
     <section className="py-20 bg-white">
       {/* Responsive Container with Equal Padding */}
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <div className="">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 font-plus-jakarta">
@@ -72,7 +72,7 @@ export default function WhatSetsUsApart() {
               <div className="flex justify-center w-full">
                 <div className="relative">
                   <img
-                    src="/icons/iPhone-13.svg"
+                    src="/icons/iPhones/what-sets-us-iPhone.svg"
                     alt="iPhone Mockup"
                     className="xl:max-w-[1103px] xl:max-h-[827px] max-w-[1000px] max-h-[650px]"
                   />
@@ -111,9 +111,9 @@ export default function WhatSetsUsApart() {
               <div className="flex justify-center mb-12">
                 
                   <img
-                    src="/icons/iPhone-13.svg"
+                    src="/icons/iPhones/what-sets-us-iPhone-mobile.svg"
                     alt="iPhone Mockup"
-                    className="w-full h-full scale-110"
+                    className="w-full h-full"
                   />
                 
               </div>

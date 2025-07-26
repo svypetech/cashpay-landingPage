@@ -11,23 +11,23 @@ export default function CryptoForMerchants() {
     {
       icon: "box.svg",
       title: "Dedicated Dashboard",
-      description: "Overview of all Crypto orders and settings"
+      description: "Overview of all Crypto orders and settings",
     },
     {
       icon: "eth.svg",
       title: "Order Management",
-      description: "Efficient handling of orders and sell orders"
+      description: "Efficient handling of orders and sell orders",
     },
     {
       icon: "doc.svg",
       title: "Ad Listings",
-      description: "Create and manage promotional ads with ease"
+      description: "Create and manage promotional ads with ease",
     },
     {
       icon: "user.svg",
       title: "Seamless Switching",
-      description: "Toggle between personal and merchant accounts effortlessly"
-    }
+      description: "Toggle between personal and merchant accounts effortlessly",
+    },
   ];
 
   return (
@@ -40,11 +40,12 @@ export default function CryptoForMerchants() {
               {/* Header */}
               <div className="mb-12">
                 <h2 className="w-full text-4xl lg:text-5xl font-bold text-white mb-6 font-plus-jakarta leading-tight">
-                  How We Make Crypto
-                  Easy For Merchants
+                  How We Make Crypto Easy For Merchants
                 </h2>
                 <p className="text-lg text-dark-mode-secondaryText font-[600] font-plus-jakarta leading-relaxed">
-                  CashPay allows Merchants to Manage orders, create listings, and grow<br />
+                  CashPay allows Merchants to Manage orders, create listings,
+                  and grow
+                  <br />
                   your business-all in one place.
                 </p>
               </div>
@@ -55,13 +56,13 @@ export default function CryptoForMerchants() {
                   <div key={index} className="flex items-start space-x-4">
                     {/* Icon Circle */}
                     <div className="w-14 h-14 bg-dark-mode-accent rounded-full flex items-center justify-center flex-shrink-0 border-[0.5px] border-dark-mode-secondary">
-                      <img 
-                        src={`/icons/${feature.icon}`} 
+                      <img
+                        src={`/icons/${feature.icon}`}
                         alt={feature.title}
                         className="w-6 h-6"
                       />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1">
                       <h3 className="text-lg font-bold text-white mb-2 font-plus-jakarta">
@@ -76,17 +77,28 @@ export default function CryptoForMerchants() {
               </div>
 
               {/* Blue Highlight Box */}
-              
             </div>
 
             {/* Right Side - iPhone Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <img 
-                  src="/icons/iPhone-15.svg" 
+              <div className="relative   overflow-visible">
+                <img
+                  src="/icons/iPhones/merchant-iPhone.svg"
                   alt="CashPay Mobile App"
-                  className="h-full w-full"
+                  className="relative h-full w-full md:block hidden z-1"
                 />
+                <img
+                  src="/icons/iPhones/merchant-iPhone-mobile.svg"
+                  alt="CashPay Mobile App"
+                  className="relative h-full w-full md:hidden block scale-110 z-1"
+                />
+                <div className="absolute bottom-[-290px] center-x-1/2 h-full">
+                  <img
+                    src="/icons/iPhone-ellipse.svg"
+                    alt="Ellipse effect"
+                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import HeroSection from "@/src/components/ui/HeroSection";
-import Cards from "@/src/components/withdraw/Cards";
 import HowItWorksSection from "@/src/components/ui/HowItWorksSection";
 import PromoBanner from "@/src/components/ui/PromoBanner";
 import CryptoGatewayBanner from "@/src/components/ui/CryptoGatewayBanner";
@@ -48,7 +47,7 @@ export default function WithdrawPage() {
       <HeroSection
         title="Withdraw Anytime, Anywhere"
         description="Cash out your assets in seconds or days—whatever suits you. Send crypto to any wallet address or convert to fiat and withdraw to your bank, all with clear rates and secure processing"
-        imageSrc="/images/withdraw-bg.jpg"
+        imageSrc="/images/backgrounds/withdraw-bg.jpg"
         imageAlt="Withdraw Background"
         buttonText="Download now"
         buttonSize="lg"

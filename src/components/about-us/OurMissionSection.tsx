@@ -47,10 +47,10 @@ export default function OurMissionSection({
       }  ${className}`}
     >
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <div className="">
+        <div className="max-w-7xl mx-auto">
           {/* Content Section - Container Centered */}
           <div className="flex justify-center mb-16">
-            <div className="w-full max-w-4xl">
+            <div className="w-full">
               {/* Header */}
               <div className="mb-12">
                 <h2
@@ -80,7 +80,12 @@ export default function OurMissionSection({
                   <img
                     src={imageSrc}
                     alt={imageAlt}
-                    className={`${imageClasses} w-full h-full`}
+                    className={`${imageClasses} w-full h-full sm:block hidden`}
+                  />
+                  <img
+                    src={mobileImageSrc}
+                    alt={imageAlt}
+                    className={`${imageClasses} w-full h-full sm:hidden block`}
                   />
                 </div>
               </div>
@@ -100,7 +105,7 @@ const RenderCards = ({ cardDetails }: { cardDetails: Detail[] }) => {
   const card4 = cardDetails.find((detail) => detail.number === 4);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:h-[620px] max-w-7xl w-full justify-center">
+    <div className="flex flex-col md:flex-row gap-6 md:h-[750px] max-w-7xl w-full justify-center">
       {/* First Column - Cards 1 and 3 */}
       <div className="flex flex-col md:w-[62%] gap-6 h-full">
         {/* Card 1 */}

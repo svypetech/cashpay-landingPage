@@ -58,13 +58,12 @@ export default function VerticalTimeline() {
         <div className="max-w-7xl mx-auto">
           {/* Header section */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Your Journey With CashPay
+            <h2 className="text-4xl font-bold mb-6 text-pure-gray">
+              Getting Started with CashPay{" "}
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Getting started with CashPay is simple and secure. Follow these
-              five easy steps to begin your crypto journey and experience
-              financial freedom.
+            <p className="max-w-2xl mx-auto md:text-lg text-base text-secondaryText font-[600]">
+              It’s simple, fast, and secure. Follow these steps to begin your
+              journey.
             </p>
           </div>
 
@@ -72,10 +71,8 @@ export default function VerticalTimeline() {
           <div className="relative">
             {/* Timeline line running through everything */}
             <div
-              className="absolute left-1/2 transform -translate-x-1/2 w-[3.5px] bg-blue-200 z-0"
+              className="absolute left-1/2 transform -translate-x-1/2 w-[3.5px] bg-blue-200 z-0 h-[98%] top-[100px] md:h-[90%] md:top-[300px]"
               style={{
-                top: "300px",
-                height: "calc(90%)",
                 background:
                   "linear-gradient(to bottom, #FFFFFF, #D4DCEC, #C2D0ED, #809DD7, #163C89)",
               }}
@@ -91,7 +88,7 @@ export default function VerticalTimeline() {
               <img
                 src="/icons/iPhones/timeline-iPhone-mobile.svg"
                 alt="CashPay App Interface"
-                className="h-[90%] w-[90%] z-20 relative block md:hidden"
+                className="h-[100%] w-[100%] z-20 relative block md:hidden "
               />
             </div>
 
@@ -101,19 +98,22 @@ export default function VerticalTimeline() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col md:flex-row items-center md:items-start relative mb-20 md:mb-16"
+                  className="flex flex-col md:flex-row items-center md:items-start relative py-8 md:py-0 mb-10 md:mb-0"
                 >
                   {/* Left side (even on desktop) */}
                   <div
-                    className={`hidden md:block w-1/2 ${
+                    className={`hidden md:block w-1/2  ${
                       isEven ? "pr-16" : "opacity-0"
                     }`}
-                    style={{ marginTop: "" }}
                   >
                     {isEven && (
                       <div
-                        className="bg-white pl-10 pr-3 py-12 rounded-lg shadow-md ml-auto max-w-[350px]"
-                        style={{ minHeight: "220px" }}
+                        className="bg-white pl-10 pr-3 py-12 rounded-[16px] ml-auto max-w-[350px] relative top-[-50px]"
+                        style={{
+                          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.08)",
+                          filter: "blur(0px)",
+                          minHeight: "220px",
+                        }}
                       >
                         <div className="bg-[#2156C11A] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                           <span className="text-[#2156C1] poppins font-[700] text-2xl">
@@ -138,19 +138,26 @@ export default function VerticalTimeline() {
                   </div>
 
                   {/* Timeline Dot */}
-                  <div className="absolute left-1/2 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#2156C1] rounded-full border-4 border-white z-20"></div>
+                  <div
+                    className={`absolute left-1/2 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#2156C1] rounded-full border-4 border-white z-20 md:top-0 top-[-1px]  ${
+                      step.number === "1" ? "" : "md:top-[-50px]"
+                    }`}
+                  ></div>
 
                   {/* Right side (odd on desktop) */}
                   <div
                     className={`hidden md:block w-1/2 ${
                       !isEven ? "pl-16" : "opacity-0"
                     }`}
-                    
                   >
                     {!isEven && (
                       <div
-                        className="bg-white pl-10 pr-3 py-12 rounded-lg shadow-md max-w-[350px]"
-                        style={{ minHeight: "220px" }}
+                        className="bg-white pl-10 pr-3 py-12 rounded-[16px] max-w-[350px] relative top-[-50px] "
+                        style={{
+                          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.08)",
+                          filter: "blur(0px)",
+                          minHeight: "220px",
+                        }}
                       >
                         <div className="bg-[#2156C11A] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                           <span className="text-[#2156C1] poppins font-[700] text-2xl">
@@ -177,7 +184,7 @@ export default function VerticalTimeline() {
                   {/* Mobile version - card below dot */}
                   <div className="md:hidden w-full mt-8 px-4">
                     <div
-                      className="bg-white p-6 rounded-lg shadow-md mx-auto max-w-md"
+                      className="bg-white p-6 rounded-[16px] shadow-md mx-auto max-w-md"
                       style={{ minHeight: "180px" }}
                     >
                       <div className="bg-[#2156C11A] w-14 h-14 rounded-full flex items-center justify-center mb-4">
