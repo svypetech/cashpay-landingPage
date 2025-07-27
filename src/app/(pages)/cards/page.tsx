@@ -18,15 +18,10 @@ export default function Cards() {
       />
       <CardTypesSection />
       <PromoBanner
-      title="Experience financial freedom with CashPay cards—spend crypto anywhere, anytime, effortlessly."
-      className="h-[500px] "
-      
+        title="Experience financial freedom with CashPay cards—spend crypto anywhere, anytime, effortlessly."
+        className="h-[500px] "
       />
       <CardsLifestyleSection />
-      <div className="">
-
-      </div>
-
     </>
   );
 }

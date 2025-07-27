@@ -92,11 +92,11 @@ export default function CryptoForMerchants() {
                   alt="CashPay Mobile App"
                   className="relative h-full w-full md:hidden block scale-110 z-1"
                 />
-                <div className="absolute bottom-[-290px] center-x-1/2 h-full">
+                <div className="absolute bottom-[-200px]  md:bottom-[-330px] xl:bottom-[-290px] lg:bottom-[-200px] center-x-1/2 h-full">
                   <img
                     src="/icons/iPhone-ellipse.svg"
                     alt="Ellipse effect"
-                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                    className=" w-full h-[300px] lg:w-[500px] h-auto z-40"
                   />
                 </div>
               </div>

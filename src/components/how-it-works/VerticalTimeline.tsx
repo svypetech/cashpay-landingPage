@@ -123,7 +123,7 @@ export default function VerticalTimeline() {
                         <h3 className="text-2xl font-[600] mb-3 poppins">
                           {step.title}
                         </h3>
-                        <ul className="list-disc pl-5 space-y-2 max-w-[280px]">
+                        <ul className="list-disc marker:text-xs  pl-5 space-y-2 max-w-[280px]">
                           {step.points.map((point, i) => (
                             <li
                               key={i}
@@ -167,7 +167,7 @@ export default function VerticalTimeline() {
                         <h3 className="text-2xl font-[600] mb-3 poppins">
                           {step.title}
                         </h3>
-                        <ul className="list-disc pl-5 space-y-2">
+                        <ul className="list-disc marker:text-xs pl-5 space-y-2">
                           {step.points.map((point, i) => (
                             <li
                               key={i}

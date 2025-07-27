@@ -18,6 +18,7 @@ interface HowItWorksSectionProps {
   className?: string;
   singleColumn?: boolean; // New prop
   isDark?: boolean; // New prop for dark mode
+  ellipseClassName?: string; // New prop for ellipse class
 }
 
 export default function HowItWorksSection({
@@ -32,6 +33,7 @@ export default function HowItWorksSection({
   className = "",
   singleColumn = false, // Default to false
   isDark = true, // New prop for dark mode
+  ellipseClassName = "bottom-[-360px] min-[450px]:bottom-[-490px] lg:bottom-[-480px] center-x-1/2" 
 }: HowItWorksSectionProps) {
   const isImageLeft = imagePosition === "left";
   const isImageRight = imagePosition === "right";
@@ -107,11 +109,11 @@ export default function HowItWorksSection({
                   alt={imageAlt}
                   className={`${imageClasses} w-full h-full block sm:hidden`}
                 />
-                <div className="absolute bottom-[0px] center-x-1/2 h-full">
+                <div className="absolute bottom-[-100px] min-[450px]:bottom-[-100px] left-[50px] sm:bottom-[-120px] min-[800px]:bottom-[-200px] lg:bottom-[-200px] xl:bottom-[-220px]  2xl:bottom-[-250px] center-x-1/2 lg:left-[200px]  h-full">
                   <img
-                    src="/icons/iPhone-ellipse.svg"
+                    src="/icons/wallet-ellipse.svg"
                     alt="Ellipse effect"
-                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                    className="max-w-full h-auto z-40 relative"
                   />
                 </div>
               </div>
@@ -133,16 +135,23 @@ export default function HowItWorksSection({
     >
       {/* Bottom positioned image - absolutely positioned like DownloadSection */}
       {isImageBottom && (
-        <>
+        <div className="relative bg-red-500">
           {/* Desktop Image */}
-          <div className="absolute lg:bottom-[0px] bottom-[-100px] right-0 hidden lg:block">
+          <div className="absolute  bottom-[-470px] right-0 hidden lg:block z-10">
             <img
               src={imageSrc}
               alt={imageAlt}
               className={`relative ${imageClasses}`}
             />
+            <div className="absolute bottom-[-360px] min-[450px]:bottom-[-490px] lg:bottom-[-400px] center-x-1/2 h-full">
+              <img
+                src="/icons/iPhone-ellipse.svg"
+                alt="Ellipse effect"
+                className="max-w-full h-auto z-40 relative"
+              />
+            </div>
           </div>
-        </>
+        </div>
       )}
 
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
@@ -166,21 +175,14 @@ export default function HowItWorksSection({
                   <img
                     src={imageSrc}
                     alt={imageAlt}
-                    className={`relative ${imageClasses} hidden lg:block`}
+                    className={`relative ${imageClasses}`}
                   />
 
-                  {!mobileImageSrc && (
-                    <img
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className={`relative ${imageClasses} block lg:hidden`}
-                    />
-                  )}
-                  <div className="absolute bottom-[-430px] center-x-1/2 h-full">
+                  <div className={`absolute ${ellipseClassName} h-full`}>
                     <img
                       src="/icons/iPhone-ellipse.svg"
                       alt="Ellipse effect"
-                      className=" w-[300px] h-[300px] lg:w-[700px] h-auto z-40"
+                      className="sm:max-w-[500px] lg:max-w-[500px] xl:max-w-[500px] max-w-full h-auto z-40 relative"
                     />
                   </div>
 
@@ -248,11 +250,11 @@ export default function HowItWorksSection({
                   alt={imageAlt}
                   className="w-full h-full"
                 />
-                <div className="absolute bottom-[0px] center-x-1/2 h-full">
+                <div className="absolute bottom-[-100px] min-[600px]:bottom-[-150px] min-[800px]:bottom-[-200px] lg:bottom-[-480px] center-x-1/2  h-full">
                   <img
                     src="/icons/iPhone-ellipse.svg"
                     alt="Ellipse effect"
-                    className=" w-[300px] h-[300px] lg:w-[600px] h-auto z-40"
+                    className="max-w-full h-auto z-40 relative"
                   />
                 </div>
               </div>

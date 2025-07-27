@@ -2,7 +2,7 @@ import React from "react";
 import HeroSectionPages from "@/src/components/ui/HeroSectionPages";
 import StatsGrid from "@/src/components/testimonials/StatsGrid";
 import Testimonials from "@/src/components/home/Testimonials";
-import GlobeSection from "./GlobeSection";
+import GlobeSection from "../../../components/testimonials/GlobeSection";
 
 export default function AboutUsPage() {
   return (

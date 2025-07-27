@@ -37,6 +37,7 @@ export default function PortfolioManagementPage() {
         steps={features}
         imageClasses="w-full h-full"
         isDark={false}
+        ellipseClassName="bottom-[-320px] min-[400px]:bottom-[-380px] min-[500px]:bottom-[-510px] lg:bottom-[-420px] 2xl:bottom-[-480px] center-x-1/2 left-[50px]"
       />
       <InvestmentSection />
     </>

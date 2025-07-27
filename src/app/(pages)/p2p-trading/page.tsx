@@ -65,10 +65,11 @@ export default function P2PTradingPage() {
       <HowItWorksSection
         steps={steps}
         imagePosition="right"
-        imageSrc="/icons/iPhone-15.svg"
+        imageSrc="/icons/iPhones/merchant-iPhone.svg"
         imageClasses="h-full w-full"
         imageAlt="CashPay Mobile App"
         description="Securely store, send, and receive cryptocurrencies with ease, all in one place."
+        ellipseClassName="bottom-[-180px] min-[450px]:bottom-[-250px] sm:bottom-[-370px]  lg:bottom-[-220px] xl:bottom-[-300px] 2xl:bottom-[-300px] center-x-1/2 left-[50px] lg:left-[0px] xl:left-[70px] "
       />
       <ThreeColumnCards features={features} />
     </>
