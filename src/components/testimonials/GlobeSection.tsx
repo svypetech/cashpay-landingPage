@@ -12,14 +12,14 @@ export default function GlobeSection() {
           </p>
         </header>
       
-      <div className="mt-10  flex justify-center">
+      <div className="mt-10 flex justify-center">
         <img
-          src="/icons/globe.svg"
+          src="/icons/testimonials-map.svg"
           alt="Globe showing CashPay's global reach"
-          className="w-full h-[40%] rounded-[12px] md:block hidden"
+          className="w-full h-full rounded-[12px] md:block hidden"
         />
         <img
-          src="/icons/globe-mobile.svg"
+          src="/icons/testimonials-map-mobile.svg"
           alt="Globe showing CashPay's global reach"
           className="w-full h-full rounded-[12px] md:hidden block"
         />

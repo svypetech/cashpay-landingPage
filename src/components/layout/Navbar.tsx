@@ -97,7 +97,7 @@ export default function Navbar() {
             </div>
 
             {/* Navigation Links */}
-            <div className="hidden lg:block font-plus-jakarta font-[600]">
+            <div className="hidden xl:block font-plus-jakarta font-[600]">
               <div className="ml-10 flex items-baseline space-x-8">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative">
@@ -137,7 +137,7 @@ export default function Navbar() {
             </div>
 
             {/* Get App Button */}
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <Link href="/get-app">
                 <button className="bg-[#175BE4] flex justify-center items-center text-white px-8 py-[10px] poppins rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-600">
                   Get App
@@ -146,7 +146,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden">
+            <div className="xl:hidden">
               <button
                 type="button"
                 onClick={() => setShowMobileMenu(true)}
