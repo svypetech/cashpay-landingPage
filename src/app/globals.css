@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-Regular.woff2")
+      format("woff2"),
+    url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-SemiBold.woff2")
+      format("woff2"),
+    url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-SemiBold.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-Bold.woff2")
+      format("woff2"),
+    url("/fonts/Poppins_Complete/Fonts/WEB/fonts/Poppins-Bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/Poppins.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/Poppins-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Regular.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-ExtraBold.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-ExtraBold.woff")
+      format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Bold.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-SemiBold.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-SemiBold.woff")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Medium.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Medium.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff2")
+      format("woff2"),
+    url("/fonts/PlusJakartaSans_Complete/Fonts/WEB/fonts/PlusJakartaSans-Light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2")
+      format("woff2"),
+    url("/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2")
+      format("woff2"),
+    url("/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.font-satoshi {
+  font-family: "Satoshi", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+@theme {
+  --font-poppins: Poppins, sans-serif;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+  --color-primary: #175be4;
+  --color-primaryText: #4d4c4c;
+  --color-primaryText2: #1d1d1d;
+  --color-light-mode-primary: #143881;
+  --color-dark-mode-accent: #2156c11a;
+  --color-dark-mode-bg: #121212;
+  --color-accent: #2156c11a;
+  --color-secondaryText: #333333;
+  --color-dark-mode-secondaryText: #b3b3b3;
+  --color-dark-mode-secondary: #27aae1;
+  --color-textLight: #1d1d1d;
+  --color-gray: #4d4c4c;
+  --color-gray2: #333333;
+  --color-pure-gray: #2b2b2b;
+}
