@@ -4,56 +4,59 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import MobileSidebar from "./Sidebar";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About us", href: "/about-us" },
+  { name: "Features", href: "", hasDropdown: true },
+  { name: "How It works?", href: "/how-it-works" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Privacy Policy", href: "/privacyPolicy" },
+];
+
+const dropdownItems = [
+  {
+    title: "Deposit",
+    description: "Easily add funds to your wallet from any source.",
+  },
+  {
+    title: "Withdraw",
+    description: "Transfer your crypto to external wallets or convert to fiat.",
+  },
+  {
+    title: "Swap",
+    description: "Exchange one cryptocurrency for another instantly.",
+  },
+  {
+    title: "Send Gift",
+    description: "Share crypto with friends and family as a thoughtful gift.",
+  },
+  {
+    title: "Cards",
+    description: "Spend your crypto with physical and virtual cards.",
+  },
+  {
+    title: "Wallet Features",
+    description: "Securely store your crypto in hot wallets for easy access.",
+  },
+  {
+    title: "Portfolio Management",
+    description: "Monitor your holdings and track performance effortlessly.",
+  },
+  {
+    title: "P2P Trading",
+    description: "Trade directly with others through our secure platform.",
+  },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const pathName = usePathname();
+  const isPrivacyPolicyPage = pathName === "/privacyPolicy";
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About us", href: "/about-us" },
-    { name: "Features", href: "", hasDropdown: true },
-    { name: "How It works?", href: "/how-it-works" },
-    { name: "Testimonials", href: "/testimonials" },
-    { name: "Privacy Policy", href: "/privacyPolicy" },
-  ];
-
-  const dropdownItems = [
-    {
-      title: "Deposit",
-      description: "Easily add funds to your wallet from any source.",
-    },
-    {
-      title: "Withdraw",
-      description:
-        "Transfer your crypto to external wallets or convert to fiat.",
-    },
-    {
-      title: "Swap",
-      description: "Exchange one cryptocurrency for another instantly.",
-    },
-    {
-      title: "Send Gift",
-      description: "Share crypto with friends and family as a thoughtful gift.",
-    },
-    {
-      title: "Cards",
-      description: "Spend your crypto with physical and virtual cards.",
-    },
-    {
-      title: "Wallet Features",
-      description: "Securely store your crypto in hot wallets for easy access.",
-    },
-    {
-      title: "Portfolio Management",
-      description: "Monitor your holdings and track performance effortlessly.",
-    },
-    {
-      title: "P2P Trading",
-      description: "Trade directly with others through our secure platform.",
-    },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +75,7 @@ export default function Navbar() {
     <>
       <nav
         className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
-          isScrolled || showDropdown ? "bg-white shadow-md" : "bg-transparent"
+          (isScrolled || showDropdown) || isPrivacyPolicyPage ? "bg-white shadow-md" : "bg-transparent"
         }`}
         style={{
           height: showDropdown ? "320px" : "64px",
@@ -86,7 +89,7 @@ export default function Navbar() {
             <div className="flex-shrink-0">
               <Image
                 src={
-                  isScrolled || showDropdown
+                  isScrolled || showDropdown || isPrivacyPolicyPage
                     ? "/icons/primary-logo.svg"
                     : "/icons/white-logo.svg"
                 }
@@ -109,7 +112,7 @@ export default function Navbar() {
                           ? "hover:bg-[#27AAE11A] rounded-lg text-primaryText2"
                           : showDropdown
                           ? "text-primaryText2"
-                          : isScrolled
+                          : isScrolled || isPrivacyPolicyPage
                           ? "text-primaryText hover:text-black"
                           : ""
                       }`}
@@ -125,7 +128,7 @@ export default function Navbar() {
                       {link.name !== "Features" && (
                         <div
                           className={`absolute bottom-0 left-0 w-full h-[2.5px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200  ${
-                            isScrolled && !showDropdown
+                            (isScrolled && !showDropdown) || isPrivacyPolicyPage
                               ? "bg-black"
                               : "bg-white"
                           }`}
@@ -152,7 +155,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setShowMobileMenu(true)}
                 className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${
-                  isScrolled || showDropdown
+                  isScrolled || showDropdown || isPrivacyPolicyPage
                     ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                     : "text-white hover:text-gray-300 hover:bg-white/10"
                 }`}
@@ -160,7 +163,7 @@ export default function Navbar() {
                 <span className="sr-only">Open main menu</span>
                 <Image
                   src={
-                    isScrolled
+                    isScrolled || showDropdown || isPrivacyPolicyPage
                       ? "/icons/hamburger-black.svg"
                       : "/icons/hamburger.svg"
                   }

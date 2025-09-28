@@ -24,13 +24,14 @@ export default function HeroSection() {
           <div className="max-w-5xl mx-auto text-center">
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-plus-jakarta">
-              Simplify Your Crypto Experience with CashPay
+              Your All-in-One Crypto Gateway
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-plus-jakarta">
-              Manage your crypto assets, track balances, and analyze trends—all
-              in one secure platform.
+              Seamless crypto payments, P2P trading, and instant transfers.
+              Trusted by a growing community of secure traders. Supports USDT
+              P2P trading with multi-network payments.
             </p>
 
             {/* CTA Button */}

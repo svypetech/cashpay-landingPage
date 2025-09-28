@@ -25,9 +25,11 @@ export default function Footer() {
                   className="sm:w-[250px] w-[142px]"
                 />
               </div>
-              <p className="text-white/80 text-sm leading-relaxed max-w-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="text-white/80 text-sm leading-relaxed max-w-md">
+                CashPay is your all-in-one crypto platform for trading,
+                payments, and rewards. Whether you’re buying, selling, or
+                managing assets, our secure and intuitive app puts the future of
+                finance in your hands.
               </p>
             </div>
 
@@ -66,25 +68,24 @@ export default function Footer() {
                   Get App
                 </h3>
                 <div className="flex flex-row lg:flex-col  relative left-[-5px] ">
-
-                <a href="#" className="block">
-                  <Image
-                    src="/icons/PlayStore.svg"
-                    alt="Get it on Google Play"
-                    width={181}
-                    height={57}
-                    className="w-[130px] sm:w-[171px] hover:opacity-80 transition-opacity"
-                  />
-                </a>
-                <a href="#" className="block">
-                  <Image
-                    src="/icons/AppStore.svg"
-                    alt="Available on the App Store"
-                    width={181}
-                    height={57}
-                    className="w-[130px] sm:w-[171px] hover:opacity-80 transition-opacity"
-                  />
-                </a>
+                  <a href="#" className="block">
+                    <Image
+                      src="/icons/PlayStore.svg"
+                      alt="Get it on Google Play"
+                      width={181}
+                      height={57}
+                      className="w-[130px] sm:w-[171px] hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+                  <a href="#" className="block">
+                    <Image
+                      src="/icons/AppStore.svg"
+                      alt="Available on the App Store"
+                      width={181}
+                      height={57}
+                      className="w-[130px] sm:w-[171px] hover:opacity-80 transition-opacity"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

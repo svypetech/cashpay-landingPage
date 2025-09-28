@@ -2,7 +2,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <section className={` min-h-screen bg-black text-white `}>
+    <section className={` min-h-screen bg-white text-black `}>
       <div className="relative min-h-screen overflow-hidden rounded-lg flex flex-col gap-y-10 ml-6 pb-10">
         <p className="mt-20 text-4xl font-bold">CashPay Privacy Policy</p>
         <p>Last Update: 26 - sept - 2025</p>
